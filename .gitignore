@@ -1,0 +1,47 @@
+#==============================================================================================
+# FIAP - GRUPO 07
+#
+# Membros: Giovani Saavedra, Marcio Elifas Lima Pereira e Felipe Bernardo Papaléo de Oliveira
+#
+# Mensagem de segurança: extensões que deverão ser ignoradas pelo IDE para envio para Github
+# Compliance: caso o desenvolvedor trabalhe com outra extensão que posso comprometer a segurança
+# da aplicação adicionar neste arquivo.
+#==============================================================================================
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.production
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# Modelos treinados (pesados demais para git)
+*.keras
+*.h5
+*.pt
+*.pth
+*.pkl
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
