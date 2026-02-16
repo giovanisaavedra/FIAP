@@ -56,41 +56,53 @@ A cross-validation confirmou a robustez do modelo (R² médio = 0,9854, desvio p
 ├── requirements.txt
 └── README.md                         ← este arquivo
 ```
+---
+# 🔧 Como executar o código
 
-🔧 Como executar o código
-Pré-requisitos
+## Execução no Google Colab
+
+1. Clique no botão **"Open In Colab"** acima
+2. Faça o download do arquivo `crop_yield.csv` (disponível na pasta `assets/` deste repositório)
+3. Execute a primeira célula — o Colab abrirá uma janela para selecionar o arquivo
+4. Selecione o arquivo `crop_yield.csv` da sua máquina
+5. Execute as demais células em sequência
+
+## Pré-requisitos
 
 Python 3.10+
 Jupyter Notebook ou Google Colab
 Bibliotecas listadas em requirements.txt
 
-Instalação
+## Instalação
 
-Clone o repositório:
+### Clone o repositório:
 
 bashgit clone https://github.com/giovanisaavedra/projeto-farmtech.git
 cd projeto-farmtech
 
-Instale as dependências:
+### Instale as dependências:
 
 bashpip install -r requirements.txt
 
-Abra o notebook:
+### Abra o notebook:
 
 bashjupyter notebook src/GiovaniSaavedra_rm566797_pbl_fase5.ipynb
 Execução no Google Colab
 
-Acesse o Google Colab
+### Acesse o Google Colab
 Faça upload do notebook (src/GiovaniSaavedra_rm566797_pbl_fase5.ipynb)
 Faça upload do dataset (data/crop_yield.csv)
 Execute todas as células em sequência
 
-Bibliotecas utilizadas
+## Bibliotecas utilizadas
 BibliotecaVersãoUsopandas2.xManipulação de dadosnumpy1.xOperações numéricasmatplotlib3.xVisualizaçõesseaborn0.13+Visualizações estatísticasscikit-learn1.xModelos de ML, métricas, pré-processamentoxgboost2.xModelo XGBoost Regressor
 
-📊 Entrega 1 — Machine Learning
+---
+
+## 📊 Entrega 1 — Machine Learning
 O notebook está organizado em 3 tarefas sequenciais, onde cada etapa informa a seguinte:
-Tarefa 1 — Análise Exploratória de Dados (EDA)
+
+### Tarefa 1 — Análise Exploratória de Dados (EDA)
 
 Estatísticas descritivas de todas as variáveis
 Distribuição de cada variável (histogramas, boxplots)
@@ -98,7 +110,8 @@ Análise de correlação entre variáveis
 Análise segmentada por tipo de cultura
 Identificação e tratamento de valores ausentes e outliers
 
-Tarefa 2 — Clusterização (Aprendizado Não Supervisionado)
+
+### Tarefa 2 - Clusterização (Aprendizado Não Supervisionado)
 
 Determinação do número ideal de clusters (método do cotovelo e silhouette score)
 Aplicação do K-Means (K=4) e DBSCAN (eps=1.5, min_samples=5)
@@ -106,20 +119,23 @@ Redução de dimensionalidade com PCA para visualização
 Interpretação dos clusters no contexto agrícola
 Identificação de outliers multidimensionais
 
-Tarefa 3 — Modelos Preditivos de Regressão Supervisionada
+### Tarefa 3 — Modelos Preditivos de Regressão Supervisionada
 Cinco modelos treinados e avaliados:
 ModeloMAERMSER²Linear Regression3.0904.3650,9951XGBoost3.7945.9270,9909Random Forest3.5556.8090,9880Decision Tree3.8587.7100,9847SVR38.95671.299-0,3105
 Melhor modelo: Linear Regression (R² = 0,9951), validado com cross-validation 5-fold e análise de resíduos.
 
-☁️ Entrega 2 — Estimativa de Custos em Nuvem AWS
-Configuração da Máquina
+## ☁️ Entrega 2 — Estimativa de Custos em Nuvem AWS
+
+### Configuração da Máquina
 RecursoEspecificaçãoSistema OperacionalLinuxCPUs2Memória1 GiBRedeAté 5 GigabitArmazenamento50 GB (HD)
 Comparativo de Custos — On-Demand (100%)
 ItemSão Paulo (sa-east-1)Virgínia do Norte (us-east-1)Instância EC2ver screenshotsver screenshotsArmazenamento EBS (50 GB)ver screenshotsver screenshotsCusto mensal totalver screenshotsver screenshots
 
 
-Análise de Decisão
+### Análise de Decisão
+
 Qual é a solução mais barata?
+
 A região da Virgínia do Norte (us-east-1) apresenta custo menor, por ser uma das regiões mais antigas e com maior escala de operação da AWS.
 Considerando latência e LGPD, qual a melhor escolha?
 Recomendação: São Paulo (sa-east-1), pelas seguintes razões:
@@ -130,13 +146,13 @@ Soberania de dados: Manter os dados em território nacional oferece maior contro
 
 A diferença de custo entre as regiões é compensada pela segurança jurídica e pela melhor experiência do usuário proporcionada pela menor latência.
 
-🎬 Vídeos de Demonstração
+## 🎬 Vídeos de Demonstração
 
 Entrega 1 — Machine Learning: Assistir no YouTube
 Entrega 2 — Computação em Nuvem: Assistir no YouTube
 
 
-🗃 Histórico de lançamentos
+## 🗃 Histórico de lançamentos
 
 1.0.0 - 16/02/2026
 
