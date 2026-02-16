@@ -41,7 +41,7 @@ A clusterização confirmou esses padrões: o DBSCAN separou perfeitamente as 4 
 O modelo de Linear Regression obteve o melhor desempenho (R² = 0,9951), superando modelos mais complexos como Random Forest e XGBoost — resultado coerente com a natureza linear da relação entre Crop e Yield
 A cross-validation confirmou a robustez do modelo (R² médio = 0,9854, desvio padrão = 0,0047)
 
-
+```
 📁 Estrutura de pastas
 📂 00 - PROJETO/
 ├── 📂 assets/
@@ -55,7 +55,7 @@ A cross-validation confirmou a robustez do modelo (R² médio = 0,9854, desvio p
 ├── .gitignore
 ├── requirements.txt
 └── README.md                         ← este arquivo
-
+```
 
 🔧 Como executar o código
 Pré-requisitos
