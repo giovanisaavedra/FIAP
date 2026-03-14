@@ -28,18 +28,22 @@
 **Coordenador(a):** André Godoi Chiovatto 
 
 ---
+## 📜 Descrição
 
-📜 Descrição
 Este projeto foi desenvolvido para a FarmTech Solutions, empresa que presta serviços de Inteligência Artificial para uma fazenda de médio porte (200 hectares) produtora de múltiplas culturas. O objetivo é aplicar técnicas de Machine Learning para prever o rendimento agrícola e estimar os custos de hospedagem do modelo em nuvem AWS.
-O projeto está dividido em duas entregas:
-Entrega 1 — Machine Learning: Análise exploratória de dados (EDA), clusterização não supervisionada (K-Means e DBSCAN) e treinamento de 5 modelos preditivos de regressão supervisionada para prever o rendimento das safras. O dataset crop_yield.csv contém 156 registros com dados de 4 culturas (Cocoa beans, Oil palm fruit, Rice paddy e Rubber natural), variáveis climáticas (precipitação, umidade, temperatura) e o rendimento em toneladas por hectare.
-Entrega 2 — Computação em Nuvem: Estimativa de custos On-Demand na AWS, comparando as regiões de São Paulo (sa-east-1) e Virgínia do Norte (us-east-1) para hospedar uma API que receberá dados de sensores e executará o modelo de ML. A análise considera requisitos técnicos (latência), legais (LGPD) e financeiros.
-Principais Achados
 
-A EDA revelou que o rendimento é determinado quase exclusivamente pelo tipo de cultura, com baixa influência das variáveis climáticas
-A clusterização confirmou esses padrões: o DBSCAN separou perfeitamente as 4 culturas e identificou 12 outliers correspondentes a 3 condições climáticas atípicas
-O modelo de Linear Regression obteve o melhor desempenho (R² = 0,9951), superando modelos mais complexos como Random Forest e XGBoost — resultado coerente com a natureza linear da relação entre Crop e Yield
-A cross-validation confirmou a robustez do modelo (R² médio = 0,9854, desvio padrão = 0,0047)
+O projeto está dividido em duas entregas:
+
+- **Entrega 1 — Machine Learning:** Análise exploratória de dados (EDA), clusterização não supervisionada (K-Means e DBSCAN) e treinamento de 5 modelos preditivos de regressão supervisionada para prever o rendimento das safras. O dataset `crop_yield.csv` contém 156 registros com dados de 4 culturas (Cocoa beans, Oil palm fruit, Rice paddy e Rubber natural), variáveis climáticas (precipitação, umidade, temperatura) e o rendimento em toneladas por hectare.
+
+- **Entrega 2 — Computação em Nuvem:** Estimativa de custos On-Demand na AWS, comparando as regiões de São Paulo (sa-east-1) e Virgínia do Norte (us-east-1) para hospedar uma API que receberá dados de sensores e executará o modelo de ML. A análise considera requisitos técnicos (latência), legais (LGPD) e financeiros.
+
+### 🔍 Principais Achados
+
+- A EDA revelou que o rendimento é determinado quase exclusivamente pelo tipo de cultura, com baixa influência das variáveis climáticas
+- A clusterização confirmou esses padrões: o DBSCAN separou perfeitamente as 4 culturas e identificou 12 outliers correspondentes a 3 condições climáticas atípicas
+- O modelo de Linear Regression obteve o melhor desempenho (R² = 0,9951), superando modelos mais complexos como Random Forest e XGBoost — resultado coerente com a natureza linear da relação entre Crop e Yield
+- A cross-validation confirmou a robustez do modelo (R² médio = 0,9854, desvio padrão = 0,0047)
 
 ```
 📁 Estrutura de pastas
