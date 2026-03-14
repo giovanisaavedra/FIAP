@@ -174,7 +174,7 @@ Foram comparadas duas regiões AWS para identificar a solução mais econômica:
 
 A região **US East (N. Virginia)** é aproximadamente **42% mais barata** que São Paulo, representando uma economia de **$97,80 USD ao ano** com configuração idêntica. Essa diferença ocorre devido aos menores custos operacionais e maior escala de infraestrutura da região norte-americana, que é a maior e mais antiga da AWS no mundo.
 
-> 📊 Estimativa completa disponível em: [AWS Pricing Calculator](LINK_DA_ESTIMATIVA_AQUI)
+> 📊 Estimativa completa disponível em: [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=ef8cd79c5d0a32c6150676869803548982498741)
 
 ### Análise de Decisão
 
