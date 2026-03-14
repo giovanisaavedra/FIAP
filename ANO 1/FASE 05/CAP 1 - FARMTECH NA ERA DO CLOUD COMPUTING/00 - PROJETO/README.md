@@ -102,29 +102,38 @@ Execute todas as células em sequência
 ---
 
 ## 📊 Entrega 1 — Machine Learning
+
 O notebook está organizado em 3 tarefas sequenciais, onde cada etapa informa a seguinte:
 
 ### Tarefa 1 — Análise Exploratória de Dados (EDA)
 
-Estatísticas descritivas de todas as variáveis
-Distribuição de cada variável (histogramas, boxplots)
-Análise de correlação entre variáveis
-Análise segmentada por tipo de cultura
-Identificação e tratamento de valores ausentes e outliers
+- Estatísticas descritivas de todas as variáveis
+- Distribuição de cada variável (histogramas, boxplots)
+- Análise de correlação entre variáveis
+- Análise segmentada por tipo de cultura
+- Identificação e tratamento de valores ausentes e outliers
 
+### Tarefa 2 — Clusterização (Aprendizado Não Supervisionado)
 
-### Tarefa 2 - Clusterização (Aprendizado Não Supervisionado)
-
-Determinação do número ideal de clusters (método do cotovelo e silhouette score)
-Aplicação do K-Means (K=4) e DBSCAN (eps=1.5, min_samples=5)
-Redução de dimensionalidade com PCA para visualização
-Interpretação dos clusters no contexto agrícola
-Identificação de outliers multidimensionais
+- Determinação do número ideal de clusters (método do cotovelo e silhouette score)
+- Aplicação do K-Means (K=4) e DBSCAN (eps=1.5, min_samples=5)
+- Redução de dimensionalidade com PCA para visualização
+- Interpretação dos clusters no contexto agrícola
+- Identificação de outliers multidimensionais
 
 ### Tarefa 3 — Modelos Preditivos de Regressão Supervisionada
+
 Cinco modelos treinados e avaliados:
-ModeloMAERMSER²Linear Regression3.0904.3650,9951XGBoost3.7945.9270,9909Random Forest3.5556.8090,9880Decision Tree3.8587.7100,9847SVR38.95671.299-0,3105
-Melhor modelo: Linear Regression (R² = 0,9951), validado com cross-validation 5-fold e análise de resíduos.
+
+| Modelo | MAE | RMSE | R² |
+|---|---|---|---|
+| Linear Regression | 3.090 | 4.365 | 0,9951 |
+| XGBoost | 3.794 | 5.927 | 0,9909 |
+| Random Forest | 3.555 | 6.809 | 0,9880 |
+| Decision Tree | 3.858 | 7.710 | 0,9847 |
+| SVR | 38.956 | 71.299 | -0,3105 |
+
+**Melhor modelo:** Linear Regression (R² = 0,9951), validado com cross-validation 5-fold e análise de resíduos.
 
 ## ☁️ Entrega 2 — Estimativa de Custos em Nuvem AWS
 
