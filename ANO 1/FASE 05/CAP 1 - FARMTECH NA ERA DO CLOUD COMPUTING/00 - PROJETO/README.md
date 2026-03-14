@@ -93,8 +93,14 @@ Faça upload do dataset (data/crop_yield.csv)
 Execute todas as células em sequência
 
 ## Bibliotecas utilizadas
-BibliotecaVersãoUsopandas2.xManipulação de dadosnumpy1.xOperações numéricasmatplotlib3.xVisualizaçõesseaborn0.13+Visualizações estatísticasscikit-learn1.xModelos de ML, métricas, pré-processamentoxgboost2.xModelo XGBoost Regressor
-
+| Biblioteca | Versão | Uso |
+|---|---|---|
+| pandas | 2.x | Manipulação de dados |
+| numpy | 1.x | Operações numéricas |
+| matplotlib | 3.x | Visualizações |
+| seaborn | 0.13+ | Visualizações estatísticas |
+| scikit-learn | 1.x | Modelos de ML, métricas, pré-processamento |
+| xgboost | 2.x | Modelo XGBoost Regressor |
 ---
 
 ## 📊 Entrega 1 — Machine Learning
@@ -125,10 +131,50 @@ Melhor modelo: Linear Regression (R² = 0,9951), validado com cross-validation 5
 ## ☁️ Entrega 2 — Estimativa de Custos em Nuvem AWS
 
 ### Configuração da Máquina
-RecursoEspecificaçãoSistema OperacionalLinuxCPUs2Memória1 GiBRedeAté 5 GigabitArmazenamento50 GB (HD)
-Comparativo de Custos — On-Demand (100%)
-ItemSão Paulo (sa-east-1)Virgínia do Norte (us-east-1)Instância EC2ver screenshotsver screenshotsArmazenamento EBS (50 GB)ver screenshotsver screenshotsCusto mensal totalver screenshotsver screenshots
+Estimativa de custos (On-Demand – 100%) para usar uma máquina Linux simples, comparando os valores cotados para a região de São Paulo (BR) e para a região da Virgínia do Norte (EUA). 
+A máquina será utilizada para hospedar uma API que receberá dados dos sensores que coletam as variáveis da Entrega 1 e onde rodará a Machine Learning. 
+A análise deverá avaliar a solução mais barata com as seguintes configurações:
 
+2 CPUs.
+1 GIB de memória.
+Até 5 Gigabit de rede.
+50 GB de armazenamento (HD).
+
+### Infraestrutura em Nuvem AWS
+
+### Justificativa para uso da Nuvem AWS
+
+A escolha pela AWS como provedor de nuvem para hospedar a API de recepção de dados dos sensores e execução dos modelos de Machine Learning se justifica pela escalabilidade, confiabilidade e pelo modelo de pagamento sob demanda (On-Demand), que elimina a necessidade de investimento inicial em infraestrutura física. A AWS oferece disponibilidade global, suporte a instâncias Linux otimizadas e integração nativa com ferramentas de ML, tornando-a a escolha ideal para este projeto.
+
+### Configuração da Instância
+
+A instância selecionada foi a **t4g.micro**, baseada no processador ARM Graviton da AWS, que oferece melhor custo-benefício em relação às instâncias x86 equivalentes (t3.micro e t3a.micro) com as mesmas especificações técnicas.
+
+| Especificação | Configuração |
+|---|---|
+| Instância | t4g.micro |
+| Sistema Operacional | Linux |
+| vCPUs | 2 |
+| Memória | 1 GiB |
+| Desempenho de Rede | Up to 5 Gigabit |
+| Armazenamento | 50 GB (EBS) |
+| Modelo de Cobrança | On-Demand (100%) |
+
+### Comparação de Custos por Região
+
+Foram comparadas duas regiões AWS para identificar a solução mais econômica:
+
+| Região | Código | Custo Mensal | Custo Anual |
+|---|---|---|---|
+| São Paulo | sa-east-1 | $19,28 USD | $231,36 USD |
+| Virgínia do Norte | us-east-1 | $11,13 USD | $133,56 USD |
+| **Economia** | | **$8,15 USD/mês** | **$97,80 USD/ano** |
+
+### Região Selecionada: Virgínia do Norte (us-east-1)
+
+A região **US East (N. Virginia)** é aproximadamente **42% mais barata** que São Paulo, representando uma economia de **$97,80 USD ao ano** com configuração idêntica. Essa diferença ocorre devido aos menores custos operacionais e maior escala de infraestrutura da região norte-americana, que é a maior e mais antiga da AWS no mundo.
+
+> 📊 Estimativa completa disponível em: [AWS Pricing Calculator](LINK_DA_ESTIMATIVA_AQUI)
 
 ### Análise de Decisão
 
@@ -143,6 +189,27 @@ LGPD (Lei Geral de Proteção de Dados): A Lei 13.709/2018 estabelece restriçõ
 Soberania de dados: Manter os dados em território nacional oferece maior controle e segurança jurídica para a FarmTech Solutions e seus clientes.
 
 A diferença de custo entre as regiões é compensada pela segurança jurídica e pela melhor experiência do usuário proporcionada pela menor latência.
+
+### Considerações sobre Restrições Legais e Latência
+
+Apesar da região de Virgínia do Norte ser mais econômica, há um cenário alternativo que deve ser considerado: **quando existem restrições legais para armazenamento de dados no exterior ou necessidade de acesso rápido aos dados dos sensores**, a escolha muda.
+
+Nesse caso, a região **South America (São Paulo) — sa-east-1** seria a opção adequada, pelas seguintes razões:
+
+**Conformidade legal:** A legislação brasileira, especialmente a **Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)**, pode impor restrições à transferência internacional de dados pessoais ou sensíveis. Manter os dados em território nacional garante conformidade com a regulação brasileira sem necessidade de mecanismos adicionais de adequação.
+
+**Latência:** A proximidade geográfica entre os sensores instalados no Brasil e a região de São Paulo reduz significativamente a latência na transmissão e recuperação dos dados, o que é crítico para aplicações que exigem acesso em tempo real às leituras dos sensores.
+
+**Resumo da decisão:**
+
+| Critério | Virgínia do Norte | São Paulo |
+|---|---|---|
+| Custo mensal | $11,13 USD ✓ | $19,28 USD |
+| Latência para sensores no Brasil | Alta | Baixa ✓ |
+| Conformidade com LGPD | Requer adequação | Nativa ✓ |
+| Restrições de armazenamento no exterior | Não atende ✗ | Atende ✓ |
+
+> **Conclusão:** Para um cenário sem restrições legais e onde o custo é o fator principal, a escolha é **Virgínia do Norte**. Para um cenário com restrições legais de armazenamento em território nacional ou necessidade de baixa latência no acesso aos dados dos sensores, a escolha é **São Paulo**.
 
 ## 🎬 Vídeos de Demonstração
 
