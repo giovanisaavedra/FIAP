@@ -52,8 +52,6 @@ A cross-validation confirmou a robustez do modelo (R² médio = 0,9854, desvio p
 │       └── comparativo-custos.png
 ├── 📂 src/
 │   └── GiovaniSaavedra_rm566797_pbl_fase5.ipynb  ← notebook principal
-├── .gitignore
-├── requirements.txt
 └── README.md                         ← este arquivo
 ```
 ---
