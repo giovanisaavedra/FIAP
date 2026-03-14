@@ -192,14 +192,7 @@ A região **US East (N. Virginia)** é aproximadamente **42% mais barata** que S
 Qual é a solução mais barata?
 
 A região da Virgínia do Norte (us-east-1) apresenta custo menor, por ser uma das regiões mais antigas e com maior escala de operação da AWS.
-Considerando latência e LGPD, qual a melhor escolha?
-Recomendação: São Paulo (sa-east-1), pelas seguintes razões:
 
-Latência: A API receberá dados de sensores localizados no Brasil. Hospedar em São Paulo garante menor tempo de resposta (~20-40ms vs ~120-180ms para Virgínia), essencial para leitura em tempo real dos dados dos sensores.
-LGPD (Lei Geral de Proteção de Dados): A Lei 13.709/2018 estabelece restrições para transferência internacional de dados pessoais. Embora dados de sensores agrícolas possam não ser dados pessoais, a base pode conter informações associadas a proprietários rurais ou funcionários. Hospedar em São Paulo elimina riscos de interpretação legal e garante conformidade total com a legislação brasileira.
-Soberania de dados: Manter os dados em território nacional oferece maior controle e segurança jurídica para a FarmTech Solutions e seus clientes.
-
-A diferença de custo entre as regiões é compensada pela segurança jurídica e pela melhor experiência do usuário proporcionada pela menor latência.
 
 ### Considerações sobre Restrições Legais e Latência
 
@@ -212,6 +205,18 @@ Nesse caso, a região **South America (São Paulo) — sa-east-1** seria a opç�
 **Latência:** A proximidade geográfica entre os sensores instalados no Brasil e a região de São Paulo reduz significativamente a latência na transmissão e recuperação dos dados, o que é crítico para aplicações que exigem acesso em tempo real às leituras dos sensores.
 
 **Resumo da decisão:**
+
+Considerando apenas o valor, a região da Virgínia do Norte (us-east-1) é a melhor escolha.
+
+Considerando latência e LGPD, a melhor escolha é São Paulo (sa-east-1), pelas seguintes razões:
+
+- **Latência:** A API receberá dados de sensores localizados no Brasil. Hospedar em São Paulo garante menor tempo de resposta (~20-40ms vs ~120-180ms para Virgínia), essencial para leitura em tempo real dos dados dos sensores.
+
+- **LGPD (Lei Geral de Proteção de Dados):** A Lei 13.709/2018 estabelece restrições para transferência internacional de dados pessoais. Embora dados de sensores agrícolas possam não ser dados pessoais, a base pode conter informações associadas a proprietários rurais ou funcionários. Hospedar em São Paulo elimina riscos de interpretação legal e garante conformidade total com a legislação brasileira.
+
+- **Soberania de dados:** Manter os dados em território nacional oferece maior controle e segurança jurídica para a FarmTech Solutions e seus clientes.
+
+A diferença de custo entre as regiões é compensada pela segurança jurídica e pela melhor experiência do usuário proporcionada pela menor latência.
 
 | Critério | Virgínia do Norte | São Paulo |
 |---|---|---|
