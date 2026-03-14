@@ -146,10 +146,10 @@ Estimativa de custos (On-Demand – 100%) para usar uma máquina Linux simples, 
 A máquina será utilizada para hospedar uma API que receberá dados dos sensores que coletam as variáveis da Entrega 1 e onde rodará a Machine Learning. 
 A análise deverá avaliar a solução mais barata com as seguintes configurações:
 
-2 CPUs.
-1 GIB de memória.
-Até 5 Gigabit de rede.
-50 GB de armazenamento (HD).
+- 2 CPUs.
+- 1 GIB de memória.
+- Até 5 Gigabit de rede.
+- 50 GB de armazenamento (HD).
 
 ### Infraestrutura em Nuvem AWS
 
