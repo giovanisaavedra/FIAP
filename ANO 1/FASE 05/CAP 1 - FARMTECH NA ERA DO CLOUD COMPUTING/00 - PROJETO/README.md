@@ -45,11 +45,9 @@ A cross-validation confirmou a robustez do modelo (R² médio = 0,9854, desvio p
 📁 Estrutura de pastas
 📂 00 - PROJETO/
 ├── 📂 assets/
-│   ├── crop_yield.csv              ← dataset utilizado
-│   └── 📂 screenshots-aws/          ← prints da calculadora AWS
-│       ├── sao-paulo-ec2.png
-│       ├── virginia-ec2.png
-│       └── comparativo-custos.png
+│   ├── crop_yield.csv                                          ← dataset utilizado
+│   └── FIAP - ORCAMENTO - Calculadora de Precos da AWS.pdf     ← pdf do orçamento da calculadora AWS
+│     
 ├── 📂 src/
 │   └── GiovaniSaavedra_rm566797_pbl_fase5.ipynb  ← notebook principal
 └── README.md                         ← este arquivo
