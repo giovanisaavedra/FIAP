@@ -187,7 +187,9 @@ A região **US East (N. Virginia)** é aproximadamente **42% mais barata** que S
 
 > 📊 Estimativa completa disponível em: [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=ef8cd79c5d0a32c6150676869803548982498741)
 
-### Análise de Decisão - Critério Custo
+### Análise de Decisão 
+
+### Critério Custo
 
 Qual é a solução mais barata?
 
