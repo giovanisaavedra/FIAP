@@ -231,8 +231,8 @@ A diferença de custo entre as regiões é compensada pela segurança jurídica 
 
 ## 🎬 Vídeos de Demonstração
 
-- **Entrega 1 — Machine Learning:** [Assistir no YouTube](LINK_YOUTUBE_ENTREGA_1)
-- **Entrega 2 — Computação em Nuvem:** [Assistir no YouTube](LINK_YOUTUBE_ENTREGA_2)
+- **Entrega 1 — Machine Learning:** [Assistir no YouTube](https://youtu.be/aPKQ1v4xS-g)
+- **Entrega 2 — Computação em Nuvem:** [Assistir no YouTube](https://youtu.be/XsHfPQ4Yw84)
 
 ## 🗃 Histórico de lançamentos
 
