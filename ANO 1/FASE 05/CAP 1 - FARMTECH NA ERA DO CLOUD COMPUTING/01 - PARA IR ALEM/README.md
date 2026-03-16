@@ -123,6 +123,12 @@ xaamp
 mysql-connector-python
 requests
 ```
+<p align="center"><img src="assets/Diagrama-esquemático.png" width="600"><p>
+
+Conecte 
+GND do DHT22       -> GND do ESP32
+VCC do DHT22       -> 3v3 do ESP32
+DATA(SDA) do DHT22 -> GPIO 6 do ESP32
 
 ---
 
