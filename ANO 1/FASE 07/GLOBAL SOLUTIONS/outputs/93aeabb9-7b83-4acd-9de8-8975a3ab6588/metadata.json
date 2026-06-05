@@ -1,0 +1,20 @@
+{
+  "analysis_id": "93aeabb9-7b83-4acd-9de8-8975a3ab6588",
+  "address_input": "Av. Brigadeiro Faria Lima, 3477, São Paulo, SP, Brasil",
+  "address_resolved": "Casa Bandeirista, 3477, Avenida Brigadeiro Faria Lima, Vila Olímpia, Itaim Bibi, São Paulo, Região Sudeste, 01451-011, Brasil",
+  "latitude": -23.5863292,
+  "longitude": -46.6817127,
+  "output_dir": "./outputs/93aeabb9-7b83-4acd-9de8-8975a3ab6588",
+  "sentinel_rgb_path": "./outputs/93aeabb9-7b83-4acd-9de8-8975a3ab6588/sentinel_rgb.png",
+  "sentinel_date": "2026-06-04T13:18:40.591Z",
+  "sentinel_cloud_cover": 27.67,
+  "mapbox_aerial_path": "./outputs/93aeabb9-7b83-4acd-9de8-8975a3ab6588/mapbox_aerial.png",
+  "ndbi_visualization_path": "./outputs/93aeabb9-7b83-4acd-9de8-8975a3ab6588/ndbi.png",
+  "ndbi_metrics": {
+    "pct_built_up": 13.875961303710938,
+    "mean_ndbi": -0.003384388517588377,
+    "std_ndbi": 0.13321030139923096,
+    "threshold_used": 0.1
+  },
+  "timestamp": "2026-06-04T19:52:40.625168"
+}

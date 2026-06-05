@@ -1,0 +1,14 @@
+streamlit
+sentinelhub
+ultralytics
+google-genai
+boto3
+python-dotenv
+requests
+pillow
+numpy
+opencv-python
+geopy
+transformers
+torch>=2.1
+reportlab

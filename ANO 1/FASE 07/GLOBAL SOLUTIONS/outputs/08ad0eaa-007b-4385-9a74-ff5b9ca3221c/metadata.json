@@ -1,0 +1,156 @@
+{
+  "analysis_id": "08ad0eaa-007b-4385-9a74-ff5b9ca3221c",
+  "address_input": "Rua 25 de Março, 1000, São Paulo, SP, Brasil",
+  "business_context": "Empresa declara ser atacadista de eletrônicos com faturamento de R$ 200M/ano e instalações próprias compatíveis. Análise deve verificar se o tipo de estrutura física condiz com o porte declarado.",
+  "address_resolved": "1000, Rua Vinte e Cinco de Março, Glicério, Sé, São Paulo, Região Sudeste, 01021-100, Brasil",
+  "latitude": -23.5409554,
+  "longitude": -46.6320457,
+  "output_dir": "./outputs/08ad0eaa-007b-4385-9a74-ff5b9ca3221c",
+  "sentinel_rgb_path": "./outputs/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/sentinel_rgb.png",
+  "sentinel_date": "2026-05-05T13:18:57.423Z",
+  "sentinel_cloud_cover": 0.06,
+  "mapbox_aerial_path": "./outputs/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/mapbox_aerial.png",
+  "ndbi_visualization_path": "./outputs/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/ndbi.png",
+  "ndbi_metrics": {
+    "pct_built_up": 77.72789001464844,
+    "mean_ndbi": 0.20865705609321594,
+    "std_ndbi": 0.13967330753803253,
+    "threshold_used": 0.1,
+    "built_up_level": "ALTO"
+  },
+  "yolo_sentinel": {
+    "total_detections": 0,
+    "class_counts": {},
+    "confidence_avg": 0.0,
+    "annotated_image_path": "./outputs/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/yolo_sentinel_annotated.png",
+    "detections": [],
+    "model_used": "yolov8n-obb.pt"
+  },
+  "yolo_mapbox": {
+    "total_detections": 2,
+    "class_counts": {
+      "large vehicle": 2
+    },
+    "confidence_avg": 0.308,
+    "annotated_image_path": "./outputs/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/yolo_mapbox_annotated.png",
+    "detections": [
+      {
+        "class": "large vehicle",
+        "confidence": 0.361,
+        "bbox_poly": [
+          [
+            1565.3,
+            1740.3
+          ],
+          [
+            1630.0,
+            1723.1
+          ],
+          [
+            1625.8,
+            1707.2
+          ],
+          [
+            1561.1,
+            1724.4
+          ]
+        ]
+      },
+      {
+        "class": "large vehicle",
+        "confidence": 0.254,
+        "bbox_poly": [
+          [
+            1792.3,
+            1695.3
+          ],
+          [
+            1832.2,
+            1683.9
+          ],
+          [
+            1828.7,
+            1671.6
+          ],
+          [
+            1788.8,
+            1682.9
+          ]
+        ]
+      }
+    ],
+    "model_used": "yolov8n-obb.pt"
+  },
+  "clip_classification": {
+    "category_probabilities": {
+      "industrial": 0.001,
+      "commercial_dense": 0.7437,
+      "residential": 0.2512,
+      "green_area": 0.0002,
+      "parking_or_storage": 0.004,
+      "agricultural": 0.0001
+    },
+    "dominant_category": "commercial_dense",
+    "dominant_score": 0.7437,
+    "top3": [
+      [
+        "commercial_dense",
+        0.7437
+      ],
+      [
+        "residential",
+        0.2512
+      ],
+      [
+        "parking_or_storage",
+        0.004
+      ]
+    ],
+    "model_used": "openai/clip-vit-base-patch32"
+  },
+  "authenticity_score": {
+    "score": 65,
+    "decision": "ATENÇÃO",
+    "risk_level": "MÉDIO",
+    "reasoning": [
+      "NDBI: 77.7% de área construída — densidade alta compatível com instalação empresarial (+40 pontos)",
+      "CLIP: cena classificada como 'commercial_dense' (74%) — área comercial, verificar compatibilidade com declaração (+25 pontos)",
+      "YOLO Mapbox: nenhum objeto relevante detectado — sem evidência visual de atividade (+0 pontos)",
+      "YOLO Sentinel-2: nenhuma detecção (esperado — resolução de 10m/pixel limita detecção de objetos)",
+      "\n🎯 DECISÃO: ATENÇÃO (score 65/100) — há evidências, mas porte ou tipo da estrutura pode não condizer com declaração. Recomenda-se diligência adicional."
+    ],
+    "components": {
+      "ndbi_score": 40,
+      "clip_score": 25,
+      "mapbox_score": 0,
+      "sentinel_score": 0,
+      "total": 65
+    }
+  },
+  "dd_report": {
+    "report_path": "./outputs/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/dd_report.md",
+    "model_used": "gemini-2.5-flash-lite",
+    "generation_seconds": 3.95,
+    "prompt_tokens_estimated": 911,
+    "word_count": 510,
+    "status": "ok"
+  },
+  "s3_upload": {
+    "status": "success",
+    "bucket": "fiap-gs-satverify-2026",
+    "prefix": "analyses/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/",
+    "s3_uri": "s3://fiap-gs-satverify-2026/analyses/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/",
+    "files_uploaded": [
+      "analyses/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/sentinel_rgb.png",
+      "analyses/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/mapbox_aerial.png",
+      "analyses/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/yolo_mapbox_annotated.png",
+      "analyses/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/metadata.json",
+      "analyses/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/ndbi.png",
+      "analyses/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/yolo_sentinel_annotated.png",
+      "analyses/08ad0eaa-007b-4385-9a74-ff5b9ca3221c/dd_report.md"
+    ],
+    "files_failed": [],
+    "error": null
+  },
+  "timestamp": "2026-06-04T22:28:56.862509"
+}

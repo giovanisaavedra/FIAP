@@ -1,0 +1,21 @@
+{
+  "analysis_id": "107b4686-78f2-4aa3-baa9-3344f3f5bf97",
+  "address_input": "Parque Estadual da Cantareira, São Paulo, SP, Brasil",
+  "address_resolved": "Parque Estadual da Cantareira, São Paulo, Região Sudeste, Brasil",
+  "latitude": -23.4018619,
+  "longitude": -46.6024918,
+  "output_dir": "./outputs/107b4686-78f2-4aa3-baa9-3344f3f5bf97",
+  "sentinel_rgb_path": "./outputs/107b4686-78f2-4aa3-baa9-3344f3f5bf97/sentinel_rgb.png",
+  "sentinel_date": "2026-04-17T13:19:00.79Z",
+  "sentinel_cloud_cover": 0.25,
+  "mapbox_aerial_path": "./outputs/107b4686-78f2-4aa3-baa9-3344f3f5bf97/mapbox_aerial.png",
+  "ndbi_visualization_path": "./outputs/107b4686-78f2-4aa3-baa9-3344f3f5bf97/ndbi.png",
+  "ndbi_metrics": {
+    "pct_built_up": 0.0,
+    "mean_ndbi": -0.315971314907074,
+    "std_ndbi": 0.05830627307295799,
+    "threshold_used": 0.1,
+    "built_up_level": "BAIXO"
+  },
+  "timestamp": "2026-06-04T20:20:12.525510"
+}
