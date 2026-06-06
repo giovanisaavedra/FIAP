@@ -785,7 +785,7 @@ O contexto mais amplo do projeto (para introdução do vídeo e do PDF):
 
 #### O problema
 
-A lavagem de dinheiro movimenta entre **US$ 800 bilhões e US$ 2 trilhões por ano** globalmente. Empresas de fachada são o instrumento clássico. Hoje, a verificação de empresas em mercados opacos (China, Paraguai, paraísos fiscais) depende de:
+Segundo o [UNODC](https://www.unodc.org/unodc/en/money-laundering/overview.html), a lavagem de dinheiro movimenta entre **US$ 800 bilhões e US$ 2 trilhões por ano** globalmente — equivalente a 2-5% do PIB mundial. Empresas de fachada são o instrumento clássico. Hoje, a verificação de empresas em mercados opacos (China, Paraguai, paraísos fiscais) depende de:
 
 - ❌ Inspetores físicos (não escala)
 - ❌ Verificação manual via Google Earth (não auditável)

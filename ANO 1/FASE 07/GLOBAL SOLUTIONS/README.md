@@ -19,25 +19,18 @@
 | Nome             | RM       |
 |------------------|----------|
 | Giovani Saavedra | RM566797 |
-| [Nome 2]         | RM______ |
-| [Nome 3]         | RM______ |
-| [Nome 4]         | RM______ |
-| [Nome 5]         | RM______ |
-
-<!-- TODO: Giovani — preencher os nomes dos colegas acima -->
+| Marcio Elifas    | RM567871 |
 
 ### 👩‍🏫 Orientação
 
-**Tutor(a):** [Nome do(a) tutor(a)]  
-**Coordenador(a):** André Godoi Chiovatto
-
-<!-- TODO: confirmar/atualizar nome do(a) tutor(a) -->
+**Tutora:** Sabrina Otoni
+**Coordenador:** André Godoi Chiovatto
 
 ---
 
 ## 📜 Descrição
 
-Lavagem de dinheiro e fraude empresarial movimentam entre **US$ 800 bilhões e US$ 2 trilhões** por ano globalmente (UNODC). Um vetor recorrente é a declaração de **endereços empresariais incompatíveis com a operação real** — fábricas que são apenas escritórios, atacadistas que operam de boxes de comércio popular, empresas com endereço em áreas de preservação ambiental.
+Segundo o [Escritório das Nações Unidas sobre Drogas e Crime (UNODC)](https://www.unodc.org/unodc/en/money-laundering/overview.html), a lavagem de dinheiro movimenta entre **US$ 800 bilhões e US$ 2 trilhões** por ano globalmente — equivalente a 2-5% do PIB mundial. Um vetor recorrente é a declaração de **endereços empresariais incompatíveis com a operação real** — fábricas que são apenas escritórios, atacadistas que operam de boxes de comércio popular, empresas com endereço em áreas de preservação ambiental.
 
 **SatVerify** é uma plataforma de Due Diligence empresarial (KYB/AML) que automatiza a verificação inicial de endereços declarados combinando:
 
@@ -348,8 +341,6 @@ Disciplinas do curso utilizadas neste projeto:
 ## 🎬 Vídeo de Demonstração
 
 - **Apresentação SatVerify (5 minutos):** [Assistir no YouTube](https://youtu.be/PLACEHOLDER)
-
-<!-- TODO: substituir pelo link real do YouTube após gravar -->
 
 ---
 

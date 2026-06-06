@@ -57,6 +57,7 @@ def _build_styles():
         alignment=TA_CENTER,
         spaceAfter=12,
         leading=20,
+        keepWithNext=True,
     ))
     styles.add(ParagraphStyle(
         name="CoverCaption",
@@ -74,6 +75,7 @@ def _build_styles():
         spaceBefore=24,
         spaceAfter=14,
         leading=24,
+        keepWithNext=True,
     ))
     styles.add(ParagraphStyle(
         name="H2Custom",
@@ -83,6 +85,7 @@ def _build_styles():
         spaceBefore=16,
         spaceAfter=8,
         leading=20,
+        keepWithNext=True,
     ))
     styles.add(ParagraphStyle(
         name="H3Custom",
@@ -92,6 +95,7 @@ def _build_styles():
         spaceBefore=12,
         spaceAfter=6,
         leading=16,
+        keepWithNext=True,
     ))
     styles.add(ParagraphStyle(
         name="BodyJustified",
@@ -278,8 +282,8 @@ def build_pdf():
     ))
     story.append(Spacer(1, 0.4 * cm))
     story.append(Paragraph(
-        "<i>Grupo composto por 2 integrantes, conforme autorização<br/>"
-        "institucional concedida pela coordenação do curso.</i>",
+        "<b>Tutora:</b> Sabrina Otoni<br/>"
+        "<b>Coordenador:</b> André Godoi Chiovatto",
         styles["CoverCaption"]
     ))
     story.append(Spacer(1, 2 * cm))
@@ -327,9 +331,9 @@ def build_pdf():
 
     story.append(Paragraph("1.1 O problema da fraude empresarial", styles["H2Custom"]))
     story.append(Paragraph(
-        "Segundo o Escritório das Nações Unidas sobre Drogas e Crime (UNODC), a lavagem "
-        "de dinheiro movimenta entre US$ 800 bilhões e US$ 2 trilhões anualmente em "
-        "escala global — o equivalente a 2-5% do PIB mundial. Um vetor recorrente dessa "
+        "Segundo o Escritório das Nações Unidas sobre Drogas e Crime (UNODC) [8], a "
+        "lavagem de dinheiro movimenta entre US$ 800 bilhões e US$ 2 trilhões anualmente "
+        "em escala global — o equivalente a 2-5% do PIB mundial. Um vetor recorrente "
         "atividade é a declaração de endereços empresariais incompatíveis com a operação "
         "real: fábricas que são apenas escritórios, atacadistas que operam de boxes de "
         "comércio popular, empresas com endereço em áreas de preservação ambiental.",
@@ -494,11 +498,11 @@ def build_pdf():
         styles["BodyJustified"]
     ))
     story.append(Paragraph(
-        "<i>\"Quando uma técnica entra em rendimento decrescente, vale mais pivotar "
+        "<i>Quando uma técnica entra em rendimento decrescente, vale mais pivotar "
         "para abordagem complementar do que insistir. Adicionamos CLIP não para "
         "'substituir' o YOLO, mas para complementá-lo com um sinal diferente: "
         "classificação semântica da cena em vez de detecção de objetos pontuais. "
-        "Resultado: dois sinais independentes que se validam mutuamente.\"</i>",
+        "Resultado: dois sinais independentes que se validam mutuamente.</i>",
         styles["Callout"]
     ))
 
@@ -920,7 +924,8 @@ def build_pdf():
         "https://ai.google.dev/gemini-api/docs/models",
 
         "UNODC — United Nations Office on Drugs and Crime. <i>Money-Laundering "
-        "and Globalization</i>. https://www.unodc.org/unodc/en/money-laundering/",
+        "Overview</i>. Disponível em: "
+        "https://www.unodc.org/unodc/en/money-laundering/overview.html",
 
         "Zha & Stow. <i>Normalized Difference Built-up Index (NDBI) for Mapping "
         "Urban Areas from TM Imagery</i>. International Journal of Remote Sensing, "
@@ -941,7 +946,7 @@ def build_pdf():
         styles["BodyJustified"]
     ))
     story.append(Paragraph(
-        "<i>https://github.com/[seu-usuario]/satverify</i>",
+        "<i>https://github.com/giovanisaavedra/FIAP/tree/main/ANO%201/FASE%2007/GLOBAL%20SOLUTIONS</i>",
         styles["FigCaption"]
     ))
 
