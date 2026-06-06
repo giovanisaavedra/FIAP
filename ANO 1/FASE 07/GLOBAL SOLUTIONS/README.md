@@ -337,9 +337,13 @@ Disciplinas do curso utilizadas neste projeto:
 
 ---
 
-## 🎬 Vídeo de Demonstração
+## 🎬 Vídeo Demonstrativo
 
-- **Apresentação SatVerify (5 minutos):** [Assistir no YouTube](https://youtu.be/PLACEHOLDER)
+Vídeo de 5 minutos apresentando o problema, demonstração prática dos três casos validados, análise ao vivo de novo endereço e explicação da integração com as disciplinas do curso:
+
+**▶️ [Assista no YouTube](https://youtu.be/MhJJ1uBaUac)**
+
+> Vídeo publicado como "Não Listado" conforme exigência do enunciado da Global Solution 2026.1.
 
 ---
 
