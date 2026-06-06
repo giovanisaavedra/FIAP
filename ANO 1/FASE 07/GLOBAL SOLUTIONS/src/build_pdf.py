@@ -230,6 +230,18 @@ def _format_month_pt(dt: datetime) -> str:
     return f"{months_pt[dt.month]} de {dt.year}"
 
 
+def _add_page_number(canvas, doc):
+    """Desenha o número da página no rodapé centralizado (exceto capa)."""
+    if doc.page == 1:
+        return
+    canvas.saveState()
+    canvas.setFont("Helvetica", 9)
+    canvas.setFillColor(colors.HexColor("#666666"))
+    page_width = canvas._pagesize[0]
+    canvas.drawCentredString(page_width / 2.0, 1.2 * cm, str(doc.page))
+    canvas.restoreState()
+
+
 def build_pdf():
     """Função principal: monta o PDF inteiro e salva."""
     OUTPUT_PDF.parent.mkdir(parents=True, exist_ok=True)
@@ -738,16 +750,32 @@ def build_pdf():
         styles["BodyJustified"]
     ))
 
+    cell_style = ParagraphStyle(
+        name="TableCell",
+        parent=styles["Normal"],
+        fontSize=9,
+        leading=11,
+        textColor=colors.HexColor("#1a1a1a"),
+    )
     patterns_data = [
         ["Caso", "Padrão de fraude", "Sinal principal"],
-        ["1 — VW", "Endereço administrativo travestido de operacional",
-         "CLIP detecta zona residencial onde se declara indústria"],
-        ["2 — 25 de Março", "Tipo de operação incompatível com porte declarado",
-         "CLIP detecta comércio popular onde se declara atacadista"],
-        ["3 — Cantareira", "Endereço completamente fantasma",
-         "NDBI zero, CLIP detecta área verde"],
+        [
+            Paragraph("1 — VW", cell_style),
+            Paragraph("Endereço administrativo travestido de operacional", cell_style),
+            Paragraph("CLIP detecta zona residencial onde se declara indústria", cell_style),
+        ],
+        [
+            Paragraph("2 — 25 de Março", cell_style),
+            Paragraph("Tipo de operação incompatível com porte declarado", cell_style),
+            Paragraph("CLIP detecta comércio popular onde se declara atacadista", cell_style),
+        ],
+        [
+            Paragraph("3 — Cantareira", cell_style),
+            Paragraph("Endereço completamente fantasma", cell_style),
+            Paragraph("NDBI zero, CLIP detecta área verde", cell_style),
+        ],
     ]
-    story.append(_make_table(patterns_data, col_widths=[3.5 * cm, 5.5 * cm, 6.5 * cm]))
+    story.append(_make_table(patterns_data, col_widths=[3 * cm, 6.5 * cm, 7 * cm]))
     story.append(Spacer(1, 0.4 * cm))
 
     _add_image_if_exists(
@@ -927,9 +955,10 @@ def build_pdf():
         "Overview</i>. Disponível em: "
         "https://www.unodc.org/unodc/en/money-laundering/overview.html",
 
-        "Zha & Stow. <i>Normalized Difference Built-up Index (NDBI) for Mapping "
-        "Urban Areas from TM Imagery</i>. International Journal of Remote Sensing, "
-        "vol. 24, 2003.",
+        "Zha, Y.; Gao, J.; Ni, S. <i>Use of normalized difference built-up index "
+        "in automatically mapping urban areas from TM imagery</i>. International "
+        "Journal of Remote Sensing, vol. 24, n. 3, pp. 583-594, 2003. "
+        "DOI: 10.1080/01431160304987",
 
         "AWS — Amazon Web Services. <i>S3 Best Practices and Pricing</i>. "
         "https://aws.amazon.com/s3/",
@@ -953,7 +982,7 @@ def build_pdf():
     # ===========================================================
     # GERA O ARQUIVO
     # ===========================================================
-    doc.build(story)
+    doc.build(story, onFirstPage=_add_page_number, onLaterPages=_add_page_number)
     print(f"✅ PDF gerado: {OUTPUT_PDF}")
     print(f"   Tamanho: {OUTPUT_PDF.stat().st_size / 1024:.1f} KB")
 
