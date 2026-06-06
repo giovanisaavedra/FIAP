@@ -225,3 +225,5 @@ docker-compose.override.yml
 tmp/
 temp/
 .scratch/
+# Ferramenta auxiliar de build do PDF (não vai pro repo)
+src/build_pdf.py
