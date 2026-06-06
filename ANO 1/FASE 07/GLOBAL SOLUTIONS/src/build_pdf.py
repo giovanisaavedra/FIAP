@@ -138,6 +138,20 @@ def _build_styles():
         spaceAfter=14,
         leading=12,
     ))
+    styles.add(ParagraphStyle(
+        name="QueroConcorrer",
+        parent=styles["Normal"],
+        fontName="Helvetica-Bold",
+        fontSize=16,
+        textColor=colors.HexColor("#1F4E79"),
+        alignment=TA_CENTER,
+        spaceBefore=24,
+        spaceAfter=24,
+        borderWidth=2,
+        borderColor=colors.HexColor("#1F4E79"),
+        borderPadding=12,
+        borderRadius=4,
+    ))
     return styles
 
 
@@ -298,7 +312,9 @@ def build_pdf():
         "<b>Coordenador:</b> André Godoi Chiovatto",
         styles["CoverCaption"]
     ))
-    story.append(Spacer(1, 2 * cm))
+    story.append(Spacer(1, 0.5 * cm))
+    story.append(Paragraph("QUERO CONCORRER", styles["QueroConcorrer"]))
+    story.append(Spacer(1, 0.5 * cm))
     story.append(Paragraph(
         _format_month_pt(datetime.now()),
         styles["CoverCaption"]
