@@ -335,6 +335,7 @@ def build_pdf():
         ("2.2", "Pipeline de processamento (9 etapas)", "7"),
         ("2.3", "Decisões arquiteturais críticas", "9"),
         ("2.4", "Integração com AWS S3", "12"),
+        ("2.5", "Integração com as disciplinas do curso", "13"),
         ("3.", "Resultados", "14"),
         ("3.1", "Casos de demonstração validados", "14"),
         ("3.2", "Métricas comparativas", "16"),
@@ -615,6 +616,190 @@ def build_pdf():
         "por analysis_id), demonstrando integração efetiva com a nuvem.",
         width_cm=15,
     )
+
+    # ===========================================================
+    # 2.5 — Integração com as disciplinas do curso
+    # ===========================================================
+    story.append(Paragraph(
+        "2.5 Integração com as disciplinas do curso",
+        styles["H2Custom"]
+    ))
+    story.append(Spacer(1, 0.3 * cm))
+
+    story.append(Paragraph(
+        "O SatVerify foi concebido como aplicação prática integrada das nove "
+        "disciplinas que compõem o primeiro ano do curso de Inteligência "
+        "Artificial da FIAP. A seguir, descrevemos como cada disciplina se "
+        "manifesta no projeto.",
+        styles["BodyJustified"]
+    ))
+    story.append(Spacer(1, 0.3 * cm))
+
+    # Disciplina 1 — AI Challenges
+    story.append(Paragraph(
+        "<b>AI Challenges.</b> O projeto inteiro é um exercício de identificação "
+        "e resolução de um desafio real de IA. Partimos de um problema concreto "
+        "— a fraude empresarial, que movimenta entre US$ 800 bilhões e US$ 2 "
+        "trilhões anuais segundo o UNODC — e construímos uma POC que demonstra "
+        "viabilidade técnica e econômica. Decisões pragmáticas documentadas na "
+        "seção 2.3, como pivotar de YOLO para CLIP após três iterações sem "
+        "sucesso (Descoberta 3) e implementar graceful degradation diante de "
+        "seis integrações externas (Descoberta 5), refletem a maturidade "
+        "exigida pela disciplina ao lidar com problemas reais e suas restrições.",
+        styles["BodyJustified"]
+    ))
+    story.append(Spacer(1, 0.2 * cm))
+
+    # Disciplina 2 — AI Computer Systems & Sensors
+    story.append(Paragraph(
+        "<b>AI Computer Systems &amp; Sensors.</b> Embora o projeto não utilize "
+        "ESP32 ou sensores embarcados — o escopo é cloud-native — ele trabalha "
+        "extensivamente com sensores remotos: o instrumento multiespectral MSI "
+        "da constelação Sentinel-2 da ESA, que capta seis bandas espectrais "
+        "relevantes a 10 metros de resolução, e os sensores aéreos "
+        "fotogramétricos que alimentam o Mapbox a 0,5 metro por pixel. Os "
+        "dados desses sensores são processados em hardware CPU comum (MacBook "
+        "Air com Apple Silicon), demonstrando que computação espacial avançada "
+        "é viável fora de centros de processamento dedicados.",
+        styles["BodyJustified"]
+    ))
+    story.append(Spacer(1, 0.2 * cm))
+
+    # Disciplina 3 — Cognitive Cybersecurity
+    story.append(Paragraph(
+        "<b>Cognitive Cybersecurity.</b> O SatVerify aplica diretamente "
+        "cibersegurança cognitiva ao domínio de Anti-Money Laundering (AML) e "
+        "Know Your Business (KYB). Implementamos segurança em camadas: bucket "
+        "S3 privado com Block-All-Public-Access, usuário IAM dedicado não-root "
+        "com política mínima, credenciais via variáveis de ambiente (nunca "
+        "commitadas no repositório), URLs pré-assinadas com expiração de uma "
+        "hora, e auditabilidade completa via persistência em nuvem. Cada "
+        "análise é registrada com UUID próprio e timestamp, criando trilha "
+        "auditável compatível com requisitos regulatórios de compliance "
+        "bancário.",
+        styles["BodyJustified"]
+    ))
+    story.append(Spacer(1, 0.2 * cm))
+
+    # Disciplina 4 — Cognitive Data Science
+    story.append(Paragraph(
+        "<b>Cognitive Data Science.</b> Quase todos os pilares de Ciência de "
+        "Dados Cognitiva do curso encontram aplicação no projeto. O dashboard "
+        "interativo foi construído em Streamlit, com sidebar de controle, "
+        "painéis de evidências visuais, downloads diretos e estatísticas de "
+        "uso. A busca de cenas Sentinel-2 implementa análise temporal com "
+        "lookback de 120 dias para encontrar a cena mais limpa disponível. "
+        "Dados espaciais estão presentes em toda etapa — geocoding, bounding "
+        "boxes orientados, raster multibandas georreferenciado. A persistência "
+        "de metadados em formato JSON estruturado no S3 ecoa princípios de "
+        "modelagem orientada a documentos. E a síntese cognitiva final é "
+        "executada pelo Gemini 2.5 Flash Lite, que transforma sinais numéricos "
+        "heterogêneos em narrativa interpretável pelo analista humano.",
+        styles["BodyJustified"]
+    ))
+    story.append(Spacer(1, 0.2 * cm))
+
+    # Disciplina 5 — Computational Thinking with Python
+    story.append(Paragraph(
+        "<b>Computational Thinking with Python.</b> A POC é integralmente "
+        "desenvolvida em Python 3.11, aplicando princípios fundamentais do "
+        "pensamento computacional: decomposição (cada uma das 9 etapas do "
+        "pipeline é um módulo independente em src/), abstração (provedores "
+        "externos podem ser substituídos sem alterar a orquestração), "
+        "reutilização (componentes compartilhados entre os três casos de "
+        "demonstração e novas análises) e tratamento sistemático de exceções "
+        "(graceful degradation diante de falhas externas). O projeto inclui "
+        "gerenciamento adequado de dependências via requirements.txt, "
+        "ambiente virtualizado isolado, e versionamento estruturado em "
+        "Git/GitHub seguindo boas práticas de engenharia de software.",
+        styles["BodyJustified"]
+    ))
+    story.append(Spacer(1, 0.2 * cm))
+
+    # Disciplina 6 — Formação Social e Sustentabilidade
+    story.append(Paragraph(
+        "<b>Formação Social e Sustentabilidade.</b> O SatVerify ataca um "
+        "problema com forte impacto social — a lavagem de dinheiro compromete "
+        "2 a 5% do PIB mundial e financia atividades criminais que afetam "
+        "diretamente comunidades vulneráveis. A POC democratiza o acesso a "
+        "ferramentas de compliance, tradicionalmente caras e restritas a "
+        "grandes instituições financeiras, viabilizando-as via APIs públicas "
+        "e dados abertos (Sentinel-2 gratuito por política de dados da ESA). "
+        "No eixo de sustentabilidade ambiental, o Caso 3 (Parque Estadual da "
+        "Cantareira) demonstra capacidade direta de detectar empresas-fantasma "
+        "declaradas em unidades de conservação — aplicação imediata de "
+        "tecnologia espacial para defesa de patrimônio ecológico nacional.",
+        styles["BodyJustified"]
+    ))
+    story.append(Spacer(1, 0.2 * cm))
+
+    # Disciplina 7 — Machine Learning & Modelling
+    story.append(Paragraph(
+        "<b>Machine Learning &amp; Modelling.</b> Múltiplas técnicas de ML são "
+        "empregadas em complementariedade. O CLIP zero-shot (OpenAI, 2021) "
+        "exemplifica aprendizado não supervisionado aplicado a classificação "
+        "semântica de cenas, sem necessidade de fine-tuning ou rotulação "
+        "manual. O YOLOv8-OBB treinado no dataset DOTA aplica transfer "
+        "learning: utilizamos um modelo pré-treinado em imagens aéreas "
+        "chinesas e o aplicamos a um novo domínio (Brasil) sem retreinamento. "
+        "A modelagem da decisão final combina múltiplos sinais via score "
+        "ponderado, decomposto de forma transparente (Figura 14) para que o "
+        "analista compreenda como cada componente contribui — princípio de "
+        "interpretabilidade central à disciplina.",
+        styles["BodyJustified"]
+    ))
+    story.append(Spacer(1, 0.2 * cm))
+
+    # Disciplina 8 — Plataformas, Serviços Cognitivos & Cloud Computing
+    story.append(Paragraph(
+        "<b>Plataformas, Serviços Cognitivos &amp; Cloud Computing.</b> O "
+        "SatVerify integra seis plataformas externas em um único pipeline "
+        "coerente: Nominatim/OSM (geocoding), Copernicus Data Space Ecosystem "
+        "(busca e download Sentinel-2), Mapbox Static Images (imagem aérea de "
+        "alta resolução), Google Gemini 2.5 Flash Lite (LLM para síntese "
+        "cognitiva), AWS S3 (persistência auditável), e Ultralytics/Hugging "
+        "Face (modelos de visão computacional). A camada AWS aplica práticas "
+        "enterprise: IAM com política mínima, budget alarm em US$ 0,01, "
+        "monitoramento contínuo de Free Tier, presigned URLs e organização "
+        "hierárquica por UUID. Embora a POC atual rode localmente, a "
+        "arquitetura modular permite migração imediata para deploy serverless "
+        "(Lambda + S3 backend + Streamlit Cloud), conforme detalhado na "
+        "seção 4.3.",
+        styles["BodyJustified"]
+    ))
+    story.append(Spacer(1, 0.2 * cm))
+
+    # Disciplina 9 — Redes Neurais Artificiais, Deep Learning e Algoritmos Genéticos
+    story.append(Paragraph(
+        "<b>Redes Neurais Artificiais, Deep Learning e Algoritmos "
+        "Genéticos.</b> Duas arquiteturas de deep learning compõem o coração "
+        "da inteligência visual do SatVerify. O YOLOv8 utiliza uma CNN "
+        "profunda como backbone para detecção de objetos com bounding boxes "
+        "orientados, capaz de identificar veículos, piscinas e estruturas em "
+        "imagens aéreas top-down. O CLIP ViT-B/32 combina um Vision "
+        "Transformer com encoder de texto, criando embeddings multimodais que "
+        "permitem classificação semântica zero-shot a partir de descrições em "
+        "linguagem natural. Ambos rodam sobre PyTorch e Hugging Face "
+        "Transformers, demonstrando o estado da arte em redes neurais "
+        "aplicado a um problema prático de inferência em CPU. Algoritmos "
+        "genéticos não foram empregados na POC atual, mas estão previstos "
+        "como evolução futura para otimização automática dos pesos do scoring "
+        "com base em dataset rotulado por especialistas de compliance.",
+        styles["BodyJustified"]
+    ))
+    story.append(Spacer(1, 0.3 * cm))
+
+    # Parágrafo de fechamento
+    story.append(Paragraph(
+        "A integração das nove disciplinas no SatVerify não é mera "
+        "justaposição de tecnologias — cada componente do projeto reflete "
+        "conceitos específicos absorvidos ao longo do primeiro ano. A "
+        "combinação dessas competências em uma POC coesa, auditável e "
+        "tecnicamente sólida demonstra a aplicabilidade prática do currículo "
+        "de IA da FIAP em problemas reais de impacto socioeconômico.",
+        styles["BodyJustified"]
+    ))
+    story.append(Spacer(1, 0.5 * cm))
 
     story.append(PageBreak())
 
