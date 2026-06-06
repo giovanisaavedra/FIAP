@@ -75,7 +75,6 @@ O resultado é uma decisão estruturada (**APROVADO / ATENÇÃO / REPROVADO**) c
   - 📄 `pipeline.py` — orquestração dos 9 passos
   - 📄 `run_demo.py` — rodar os 3 casos
   - 📄 `dashboard.py` — Streamlit
-  - 📄 `build_pdf.py` — gerador do PDF de entrega
 - 📂 **docs/**
   - 📄 `PROJECT_DECISIONS.md` — decisões arquiteturais + lições aprendidas
   - 📄 `SatVerify_GS_2026.pdf` — PDF de entrega (gerado via `build_pdf.py`)
