@@ -662,24 +662,24 @@ seguiu integralmente o **CRISP-DM**, em 6 etapas:
 - 🔒 Segurança: `.env` + `.env.example`, ARN mascarado, credenciais nunca
   logadas.
 
-### 🚀 v0.6.0 — 22/11/2024
+### 🚀 v0.6.0 
 - 📄 Documentação final
 - 🎥 Vídeo de apresentação
 
-### 🚀 v0.5.0 — 21/11/2024
+### 🚀 v0.5.0 
 - 💾_PipelineML
 
-### 🧠 v0.4.0 — 20/11/2024
+### 🧠 v0.4.0 
 - 🔮_Fazer Previsões
 
-### 🤖 v0.3.0 — 19/11/2024
+### 🤖 v0.3.0 
 - 🔮 _Modelagem Preditiva
 
-### 🎮 v0.2.0 — 18/11/2024
+### 🎮 v0.2.0 
 - Criação do dataset
 - 📈_Análise Exploratória (EDA)
 
-### 🗄️ v0.1.0 — 17/11/2024
+### 🗄️ v0.1.0 
 - ✨ Estrutura inicial
 - 📂 Organização de arquivos
 - 🛠 Configuração do ambiente
