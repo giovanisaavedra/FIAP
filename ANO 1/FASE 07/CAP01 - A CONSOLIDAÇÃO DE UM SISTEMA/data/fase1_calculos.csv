@@ -1,0 +1,4 @@
+timestamp,cultura,geometria,medida_1_m,medida_2_m,area_m2,area_ha,perimetro_m,insumo,dosagem_por_ha,unidade,quantidade_total
+2026-06-07T17:21:41,cafe,retangulo,100.0,250.0,25000.0,2.5,700.0,Adubo NPK 20-05-20,400.0,kg/ha,1000.0
+2026-06-08T21:22:36,cafe,retangulo,100.0,250.0,25000.0,2.5,700.0,Adubo NPK 20-05-20,400.0,kg/ha,1000.0
+2026-06-08T21:47:30,cafe,retangulo,100.0,250.0,25000.0,2.5,700.0,Adubo NPK 20-05-20,400.0,kg/ha,1000.0
