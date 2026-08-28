@@ -1,0 +1,101 @@
+# ============================================
+# CardioIA - Fase 1 - Cap. 01 - A Busca de Dados
+# 2026.2 - FIAP
+# Equipe: Giovani Saavedra (RM566797) e Marcio Elifas (RM567871)
+# ============================================
+
+# ============================================
+# 🔐 CREDENCIAIS E SECRETS
+# ============================================
+.env
+.env.*
+!.env.example
+*secret*
+*password*
+*credential*
+*.pem
+*.key
+credentials.json
+secrets.json
+kaggle.json
+.kaggle/
+
+# ============================================
+# 🖼️ DADOS PESADOS (ficam no Google Drive)
+# ============================================
+# Apenas as 8 amostras em assets/ecg_amostras/ são versionadas.
+# O conjunto completo de ~120 imagens NÃO deve ser commitado.
+ecg_download/
+cardioia_ecg_para_drive/
+*.zip
+*.rar
+*.7z
+
+# ============================================
+# 🐍 PYTHON
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+dist/
+wheels/
+*.egg-info/
+.venv
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# ============================================
+# 💻 IDEs
+# ============================================
+.idea/
+.vscode/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# 📁 SISTEMA OPERACIONAL
+# ============================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.Trash-*
+
+# ============================================
+# 📝 LOGS E TEMPORÁRIOS
+# ============================================
+*.log
+logs/
+*.tmp
+*.temp
+*.bak
+tmp/
+temp/
+cache/
+
+# ============================================
+# ✅ REGRAS DE EXCEÇÃO
+# ============================================
+!README.md
+!*.md
+!data/heart_disease_cleveland.csv
+!docs/textos/*.txt
+!assets/ecg_amostras/**
+!*/.gitkeep
