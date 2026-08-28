@@ -14,7 +14,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
 [![UCI Dataset](https://img.shields.io/badge/dataset-UCI%20Heart%20Disease-red)](https://archive.ics.uci.edu/dataset/45/heart+disease)
 [![SciELO](https://img.shields.io/badge/textos-SciELO-orange)](https://www.scielo.br/)
-[![Kaggle](https://img.shields.io/badge/imagens-Kaggle%20ECG-20BEFF)](https://www.kaggle.com/datasets/evilspirit05/ecg-analysis)
+[![Mendeley Data](https://img.shields.io/badge/imagens-Mendeley%20Data%20ECG-9cf)](https://data.mendeley.com/datasets/gwbz3fsgp8/2)
 
 ---
 
@@ -106,7 +106,7 @@ Essas variáveis combinam fatores demográficos, sintomas, exames laboratoriais 
 ## 🖼️ Parte 3 — Dados Visuais (Visão Computacional)
 
 **Origem:** **ECG Images Dataset of Cardiac Patients** (Ch. Pervaiz Elahi Institute of Cardiology, Multan), imagens **reais e anonimizadas** de ECGs de 12 derivações, categorizadas em quatro classes: **normal**, **infarto do miocárdio**, **batimentos anormais** e **histórico de IM**. Foi selecionada uma amostra **balanceada de ~120 imagens**, mantendo proporção entre classes, com proveniência documentada em `manifest.csv`.
-Fontes: https://data.mendeley.com/datasets/gwbz3fsgp8/2 | https://www.kaggle.com/datasets/evilspirit05/ecg-analysis
+Fonte: https://data.mendeley.com/datasets/gwbz3fsgp8/2 (Mendeley Data, V2 — DOI: 10.17632/gwbz3fsgp8.2, licença CC BY 4.0)
 
 Uma amostra reduzida (2 imagens por classe) está versionada em [`assets/ecg_amostras/`](assets/ecg_amostras/); o conjunto completo de ~120 imagens está no Google Drive (link abaixo).
 
