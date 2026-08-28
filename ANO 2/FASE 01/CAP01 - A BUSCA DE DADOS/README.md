@@ -192,6 +192,15 @@ CAP01 - A BUSCA DE DADOS/
 
 ---
 
+## 📚 Referências
+
+- Janosi, A., Steinbrunn, W., Pfisterer, M., & Detrano, R. (1989). *Heart Disease* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X
+- Achutti, A. (2012). Prevenção de doenças cardiovasculares e promoção da saúde. *Ciência & Saúde Coletiva*, 17(1), 18-20. https://doi.org/10.1590/S1413-81232012000100003
+- Massa, K. H. C., Duarte, Y. A. O., & Chiavegatto Filho, A. D. P. (2019). Análise da prevalência de doenças cardiovasculares e fatores associados em idosos, 2000-2010. *Ciência & Saúde Coletiva*, 24(1), 105-114. https://doi.org/10.1590/1413-81232018241.02072017
+- Khan, A. H., et al. *ECG Images dataset of Cardiac Patients*. Mendeley Data, V2. https://data.mendeley.com/datasets/gwbz3fsgp8/2
+
+---
+
 ## 📋 Licença
 
 <div align="center">
@@ -211,15 +220,6 @@ Ano: 2026.2
 **Projeto desenvolvido para FIAP — Ano 2, Fase 1 (2026.2)**  
 **Tema:** Coleta e Governança de Dados para IA em Cardiologia  
 **Equipe:** Giovani Saavedra (RM566797) e Marcio Elifas (RM567871).
-
----
-
-## 📚 Referências
-
-- Janosi, A., Steinbrunn, W., Pfisterer, M., & Detrano, R. (1989). *Heart Disease* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X
-- Achutti, A. (2012). Prevenção de doenças cardiovasculares e promoção da saúde. *Ciência & Saúde Coletiva*, 17(1), 18-20. https://doi.org/10.1590/S1413-81232012000100003
-- Massa, K. H. C., Duarte, Y. A. O., & Chiavegatto Filho, A. D. P. (2019). Análise da prevalência de doenças cardiovasculares e fatores associados em idosos, 2000-2010. *Ciência & Saúde Coletiva*, 24(1), 105-114. https://doi.org/10.1590/1413-81232018241.02072017
-- Khan, A. H., et al. *ECG Images dataset of Cardiac Patients*. Mendeley Data, V2. https://data.mendeley.com/datasets/gwbz3fsgp8/2
 
 ---
 
