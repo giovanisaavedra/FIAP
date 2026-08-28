@@ -29,7 +29,7 @@
 
 ### 👩‍🏫 Orientação
 
-**Tutor(a):** Sabrina Otoni   
+**Tutor(a):** Leonardo Ruiz Orabona / Sabrina Otoni   
 **Coordenador(a):** André Godoi Chiovatto 
 
 ---
