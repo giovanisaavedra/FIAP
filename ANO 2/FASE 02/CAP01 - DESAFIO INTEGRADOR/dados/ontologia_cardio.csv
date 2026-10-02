@@ -1,0 +1,7 @@
+sintoma,variacoes,diagnostico,protocolo,risco
+dor no peito,aperto no torax;queimacao no peito;dor no peito que piora ao esforco,Infarto Agudo do Miocárdio,ECG em ate 10 minutos e dosagem seriada de Troponina,alto risco
+falta de ar,dificuldade para respirar;falta de ar ao esforco;falta de ar intensa,Angina de Peito,Avaliacao coronariana com teste ergometrico ou angiotomografia,alto risco
+fadiga cronica,cansaco constante;fraqueza;pernas inchadas;falta de ar ao deitar,Insuficiência Cardíaca,Ecocardiograma transtoracico e dosagem de BNP,alto risco
+palpitacoes,coracao disparado;batimento acelerado;taquicardia,Arritmia Cardíaca,Eletrocardiograma continuo e Holter de 24 horas,alto risco
+dor nas costas,pontada muscular;desconforto postural;dor muscular nas costas,Dor Torácica Musculoesquelética,Analgesia orientada e repouso postural,baixo risco
+cansaco leve,fadiga leve ao final do dia;estresse de rotina,Fadiga Fisiológica / Estresse,Higiene do sono e observacao ambulatorial,baixo risco

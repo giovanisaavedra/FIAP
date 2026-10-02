@@ -1,0 +1,28 @@
+# ============================================
+# CardioIA - Fase 2 - Cap. 01 - Diagnostico Automatizado
+# 2026.2 - FIAP
+# Equipe: Giovani Saavedra (RM566797) e Marcio Elifas (RM567871)
+# ============================================
+
+# Ambientes Virtuais
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pkl
+*.keras
+*.h5
+
+# Node / Frontend
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+
+# Sistema
+.DS_Store
+*.swp
