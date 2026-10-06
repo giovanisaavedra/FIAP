@@ -122,27 +122,36 @@ Para permitir a generalização em relatos com vocabulário não previsto nas re
 - **Modelos Comparados:** `LogisticRegression(random_state=42)` vs `DecisionTreeClassifier(max_depth=5)`.
 - **Estratégia de Validação:** Divisão estratificada (75% treino / 25% teste).
 
-### 📊 Desempenho e Matriz de Confusão
+### 📊 Comparação de Desempenho e Matrizes de Confusão
 
-O modelo de Regressão Logística alcançou **92.31% de acurácia** na partição de teste independente, destacando-se o recall de 100% para os casos críticos:
+Ambos os modelos alcançaram **92.31% de acurácia global (12 acertos em 13)** no conjunto de teste independente, apresentando perfis de erro complementares:
 
+| Métrica | Regressão Logística | Árvore de Decisão (max_depth=5) |
+|:---|:---:|:---:|
+| **Acurácia Global** | **92.31%** (12/13) | **92.31%** (12/13) |
+| **Recall (Sensibilidade) Alto Risco** | 86% (6/7) | **100% (7/7)** |
+| **Precisão Alto Risco** | **100% (6/6)** | 88% (7/8) |
+| **Falsos Negativos (Risco Crítico)** | 1 caso | **0 casos** |
+| **Falsos Positivos (Alarme Falso)** | **0 casos** | 1 caso |
+| **Tipo de Saída** | **Probabilidades Contínuas** (`predict_proba`) | Rótulo Discreto |
+
+#### Matriz de Confusão — Árvore de Decisão (Foco em Sensibilidade):
 ```
-              precision    recall  f1-score   support
-
-  Alto Risco       0.86      1.00      0.92         6
- Baixo Risco       1.00      0.86      0.92         7
-
-    accuracy                           0.92        13
-   macro avg       0.93      0.93      0.92        13
-weighted avg       0.93      0.92      0.92        13
+              Previsto Alto    Previsto Baixo    Total
+Real Alto           7                0             7  (Recall = 100%)
+Real Baixo          1                5             6
 ```
 
-| Real \ Previsto | Alto Risco (Previsto) | Baixo Risco (Previsto) | Total |
-|:----------------|:---------------------:|:----------------------:|:-----:|
-| **Alto Risco**  | **6** *(VP)*          | **0** *(FN)*           | 6     |
-| **Baixo Risco** | **1** *(FP)*          | **6** *(VN)*           | 7     |
+#### Matriz de Confusão — Regressão Logística (Foco em Calibração Probabilística):
+```
+              Previsto Alto    Previsto Baixo    Total
+Real Alto           6                1             7
+Real Baixo          0                6             6  (Precisão = 100%)
+```
 
-> **Relevância Clínica:** Em sistemas de apoio à triagem médica, o erro mais crítico é o **Falso Negativo** (classificar um paciente com infarto como Baixo Risco). O modelo obteve **Recall = 1.00** para Alto Risco, garantindo segurança na triagem hospitalar.
+> **Discussão Clínica e Decisão de Projeto:** 
+> - A **Árvore de Decisão** obteve sensibilidade máxima (zero falsos negativos em emergência), porém suas regras rígidas tendem a sofrer com *overfitting* em textos com vocabulário mais livre.
+> - A **Regressão Logística** foi adotada como modelo principal de produção no portal porque gera **probabilidades calibradas contínuas** (`predict_proba`). Isso permite à equipe médica ajustar dinamicamente o ponto de corte (*threshold*) para alcançar 100% de recall em plantões de pronto-socorro.
 
 ---
 
