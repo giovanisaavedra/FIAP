@@ -1,0 +1,33 @@
+:root {
+  /* Design System Modelo 01 - Tricolor Luminous */
+  --bg-base: #e5edf5;
+  --bg-surface: #ffffff;
+  --bg-header: #e0ecf7;
+  
+  --border-subtle: #c7d8e8;
+  --border-focus: #1c385e;
+
+  --text-main: #0c1a2e;
+  --text-muted: #3d536e;
+  --text-subtle: #6883a2;
+
+  --primary: #1c385e;
+  --primary-hover: #152d4c;
+  --primary-foreground: #ffffff;
+
+  --risk-high-bg: #fee2e2;
+  --risk-high-text: #b91c1c;
+  --risk-low-bg: #dcfce7;
+  --risk-low-text: #15803d;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(28, 56, 94, 0.06);
+  --shadow-md: 0 4px 14px -2px rgba(28, 56, 94, 0.08);
+  --shadow-lg: 0 12px 32px -6px rgba(28, 56, 94, 0.12);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
