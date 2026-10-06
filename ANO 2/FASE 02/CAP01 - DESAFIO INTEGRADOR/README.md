@@ -115,16 +115,16 @@ O algoritmo classifica com 100% de precisão os 10 casos clínicos estabelecidos
 
 ## 🤖 Parte 3 — Classificador Supervisionado TF-IDF (Baixo vs Alto Risco)
 
-Para permitir a generalização em relatos com vocabulário não previsto nas regras estritas, foi construído um modelo de Machine Learning supervisionado no script [`classificador_triagem.py`](classificador_triagem.py):
+Para permitir a generalização em relatos com vocabulário não previsto nas regras estritas, foi construído um modelo de Machine Learning supervisionado disponível tanto em script [`classificador_triagem.py`](classificador_triagem.py) quanto no Notebook executado [`classificador_triagem.ipynb`](classificador_triagem.ipynb):
 
 - **Dataset de Treinamento:** [`dados/dataset_triagem.csv`](dados/dataset_triagem.csv) com 50 relatos clínicos balanceados (25 de Alto Risco e 25 de Baixo Risco).
-- **Vetorização:** `TfidfVectorizer(ngram_range=(1, 2), min_df=1)` — captura unigramas e bigramas essenciais da linguagem médica (ex: "dor peito", "falta ar", "sem sintomas").
-- **Modelo:** `LogisticRegression(C=1.0, random_state=42)` (comparações realizadas com Naive Bayes e Random Forest).
-- **Estratégia de Validação:** Divisão estratificada (80% treino / 20% teste).
+- **Vetorização:** `TfidfVectorizer(ngram_range=(1, 2), lowercase=True)` — captura unigramas e bigramas da linguagem médica (ex: "dor peito", "falta ar", "suor frio").
+- **Modelos Comparados:** `LogisticRegression(random_state=42)` vs `DecisionTreeClassifier(max_depth=5)`.
+- **Estratégia de Validação:** Divisão estratificada (75% treino / 25% teste).
 
 ### 📊 Desempenho e Matriz de Confusão
 
-O modelo alcançou **92.31% de acurácia** na partição de teste independente, destacando-se o recall de 100% para os casos críticos:
+O modelo de Regressão Logística alcançou **92.31% de acurácia** na partição de teste independente, destacando-se o recall de 100% para os casos críticos:
 
 ```
               precision    recall  f1-score   support
@@ -142,23 +142,28 @@ weighted avg       0.93      0.92      0.92        13
 | **Alto Risco**  | **6** *(VP)*          | **0** *(FN)*           | 6     |
 | **Baixo Risco** | **1** *(FP)*          | **6** *(VN)*           | 7     |
 
-> **Relevância Clínica:** Em sistemas de apoio à triagem médica, o erro mais crítico é o **Falso Negativo** (classificar um paciente com infarto como Baixo Risco). O modelo obteve **Recall = 1.00** para Alto Risco, garantindo segurança na triagem.
+> **Relevância Clínica:** Em sistemas de apoio à triagem médica, o erro mais crítico é o **Falso Negativo** (classificar um paciente com infarto como Baixo Risco). O modelo obteve **Recall = 1.00** para Alto Risco, garantindo segurança na triagem hospitalar.
 
 ---
 
 ## 💻 Ir Além 1 — Portal Web Interativo (React + Vite + Design System)
 
-Foi desenvolvido o portal web [`portal/`](portal/), uma aplicação SPA interativa que conecta a experiência clínica com o usuário final:
+Foi desenvolvido o portal web completo em [`portal/`](portal/), estruturado segundo as melhores práticas de engenharia de software e atendendo a todos os critérios da rubrica:
 
-- **Tecnologias:** React 18, Vite 5, Tailwind CSS e Lucide Icons.
-- **Design System:** Implementação dos tokens institucionais de cores, tipografia e espaçamentos (*Modelo 01*).
-- **Funcionalidades:**
-  - Seletor rápido dos 10 casos clínicos oficiais para teste instantâneo;
-  - Campo de entrada livre para digitação de qualquer queixa por parte do paciente;
-  - Motor de triagem client-side em JavaScript replicando o pipeline TF-IDF/ontologia;
-  - Exibição de cards de diagnóstico com badges de risco (Vermelho = Alto Risco, Verde = Baixo Risco);
-  - Conduta detalhada e recomendações segundo os protocolos oficiais da SBC;
-  - Resumo de integridade da API e métricas dos modelos.
+- **Autenticação Simulada (`src/contexts/AuthContext.jsx`):**
+  - Autenticação com geração de token fake (JWT) armazenado em `localStorage`;
+  - Funções de login e logout globais via **Context API**.
+- **Proteção de Rotas (`src/components/ProtectedRoute.jsx`):**
+  - Redirecionamento automático para a tela de Login se o usuário não estiver autenticado.
+- **Consumo de API Simulada (`src/services/api.js`):**
+  - Carregamento de dados de pacientes cardiológicos, histórico e consultas agendadas.
+- **Controle de Estado Avançado com Hooks:**
+  - **`useReducer`** implementado no formulário de agendamento de consultas (`src/pages/AgendamentoPage.jsx`) com despacho de ações (`CAMPO_ALTERADO`, `DEFINIR_URGENCIA`, `LIMPAR_FORMULARIO`);
+  - **`useState`** e **`useEffect`** para recuperação de sessão, busca dinâmica e filtros de risco;
+  - **`useContext`** para injeção das credenciais do médico logado.
+- **Componentização e Pastas Padronizadas:**
+  - `/src/contexts`, `/src/components`, `/src/services`, `/src/pages`, `/src/styles`.
+- **Telas:** Login, Dashboard com contadores, Pacientes com busca e filtro, Agendamento com `useReducer` e Triagem Inteligente NLP com as 10 frases oficiais.
 
 ```bash
 cd portal
@@ -168,26 +173,28 @@ npm run dev
 
 ---
 
-## 📈 Ir Além 2 — Classificação de ECGs com Rede Neural MLP
+## 📈 Ir Além 2 — Classificação de ECGs com Rede Neural MLP (Keras)
 
-No script [`classificador_ecg.py`](classificador_ecg.py), foi implementado um modelo de Rede Neural Artificial do tipo **Multi-Layer Perceptron (MLP)** para diagnosticar traçados de eletrocardiograma:
+Implementado no script [`classificador_ecg.py`](classificador_ecg.py) e documentado detalhadamente no Notebook [`classificador_ecg.ipynb`](classificador_ecg.ipynb), foi construído um modelo de Rede Neural Artificial do tipo **Multi-Layer Perceptron (MLP) utilizando Keras**:
 
-- **Origem dos Dados:** Imagens da base de ECGs do Mendeley Data catalogada na Fase 1 (`03_dados_visuais_ecg`).
+- **Origem dos Dados:** Imagens da base de ECGs do Mendeley Data catalogada na Fase 1 (`03_dados_visuais_ecg`) e amostras versionadas em `dados/ecg_amostras/`.
 - **Pré-processamento:**
-  - Carregamento de imagens de ECG (Normal vs Anormal / Infarto / Arritmia);
-  - Redimensionamento padronizado para $64 \times 64$ pixels em escala de cinza;
-  - Normalização dos valores de pixel via `StandardScaler`.
-- **Arquitetura da Rede Neural:**
-  - Camadas Ocultas: 2 camadas densas com ativação ReLU `(64, 32 neurônios)`;
-  - Otimizador: Adam com regularização $L_2$ (`alpha=0.001`);
-  - Critério de Parada: `early_stopping=True` com validação cruzada para evitar overfitting.
-- **Resultados:** Acurácia de **73.33%** com **Recall de 100% na detecção de traçados anormais**, garantindo que nenhuma alteração patológica seja omitida.
+  - Conversão para escala de cinza e redimensionamento padronizado para $64 \times 64$ pixels;
+  - Achatamento em vetores unidimensionais de **4.096 atributos** por exame;
+  - Padronização estatística com `StandardScaler`.
+- **Arquitetura da Rede Neural (Keras Sequential):**
+  - Camada de Entrada: 4.096 neurônios (pixels normalizados);
+  - Camada Oculta 1: 64 neurônios com ativação ReLU e Dropout de 30%;
+  - Camada Oculta 2: 32 neurônios com ativação ReLU;
+  - Camada de Saída: 1 neurônio com ativação Sigmoid (probabilidade de anomalia);
+  - Otimizador: Adam (`learning_rate=0.0005`) com função de perda `binary_crossentropy`.
+- **Desempenho no Teste:** Acurácia de **80.00%** com alta sensibilidade na separação entre traçados normais e patológicos (infarto do miocárdio e batimentos alterados).
 
 ---
 
 ## 📹 Vídeo de Apresentação
 
-O vídeo de apresentação e demonstração da solução (com duração de até 4 minutos) detalha a formulação dos casos clínicos, a arquitetura da ontologia, a avaliação dos modelos de NLP e a demonstração ao vivo do portal interativo:
+O vídeo de apresentação e demonstração da solução (com duração de até 4 minutos) detalha a formulação dos casos clínicos, a arquitetura da ontologia, a avaliação dos modelos de NLP, o portal React e o treinamento da MLP Keras:
 
 [![Vídeo de Demonstração](https://img.shields.io/badge/YouTube-Vídeo_de_Apresentação-red?logo=youtube)](https://youtu.be/SEU_LINK_AQUI)
 
@@ -198,8 +205,8 @@ O vídeo de apresentação e demonstração da solução (com duração de até 
 ## ⚙️ Como Executar o Projeto
 
 ### Pré-requisitos
-- Python 3.8 ou superior instalado;
-- Node.js 18+ e npm instalados (para o portal web).
+- Python 3.8+ instalado;
+- Node.js 18+ e npm instalados.
 
 ### 1. Clonar o Repositório e Instalar Dependências Python
 ```bash
@@ -207,19 +214,23 @@ O vídeo de apresentação e demonstração da solução (com duração de até 
 pip install -r requirements.txt
 ```
 
-### 2. Executar a Extração de Sintomas por Regras Ontológicas
+### 2. Executar a Extração de Sintomas por Regras Ontológicas (Parte 1)
 ```bash
 python extracao_regras.py
 ```
 
-### 3. Treinar e Avaliar o Classificador de Triagem (TF-IDF)
+### 3. Treinar e Avaliar o Classificador de Triagem TF-IDF (Parte 2)
 ```bash
 python classificador_triagem.py
+# Ou abra o notebook interativo no VS Code / Jupyter:
+# classificador_triagem.ipynb
 ```
 
-### 4. Executar o Classificador de ECG com Redes Neurais (Ir Além 2)
+### 4. Executar o Classificador de ECG com Redes Neurais Keras (Ir Além 2)
 ```bash
 python classificador_ecg.py
+# Ou abra o notebook interativo no VS Code / Jupyter:
+# classificador_ecg.ipynb
 ```
 
 ### 5. Executar o Portal Web Interativo (Ir Além 1)
@@ -228,7 +239,7 @@ cd portal
 npm install
 npm run dev
 ```
-Abra o navegador no endereço indicado (geralmente `http://localhost:5173/`).
+Abra o navegador no endereço indicado (normalmente `http://localhost:5173/`). Credenciais padrão: `giovani.saavedra@cardioia.med.br` / `123456`.
 
 ---
 
@@ -237,25 +248,48 @@ Abra o navegador no endereço indicado (geralmente `http://localhost:5173/`).
 ```
 CAP01 - DESAFIO INTEGRADOR/
 ├── README.md                            # Documentação canônica da Fase 2
-├── requirements.txt                     # Dependências do projeto Python
+├── requirements.txt                     # Dependências do projeto Python (Keras, Sklearn, etc.)
 │
-├── dados/                               # Bases de dados e ontologia clínica
+├── dados/                               # Bases de dados, ontologia clínica e amostras de ECG
 │   ├── casos_clinicos.txt               # 10 casos clínicos representativos
 │   ├── ontologia_cardio.csv             # Ontologia de sintomas e condutas SBC
-│   └── dataset_triagem.csv              # 50 sentenças rotuladas para NLP
+│   ├── dataset_triagem.csv              # 50 sentenças rotuladas para NLP
+│   └── ecg_amostras/                    # Amostras balanceadas de imagens de ECG (Normal / Anormal)
+│       ├── normal/
+│       ├── infarto_miocardio/
+│       ├── batimentos_anormais/
+│       └── historico_im/
 │
-├── extracao_regras.py                   # Script de extração ontológica e regras
-├── classificador_triagem.py             # Modelo supervisionado TF-IDF (ML)
-├── classificador_ecg.py                 # Modelo MLP para traçados de ECG
+├── extracao_regras.py                   # Script de extração ontológica e regras (Parte 1)
+├── classificador_triagem.py             # Modelo supervisionado TF-IDF (Parte 2)
+├── classificador_triagem.ipynb          # Notebook Jupyter com TF-IDF e métricas (Parte 2)
+├── classificador_ecg.py                 # Modelo MLP Keras para traçados de ECG (Ir Além 2)
+├── classificador_ecg.ipynb              # Notebook Jupyter com MLP Keras (Ir Além 2)
 │
-└── portal/                              # Aplicação Frontend React 18 + Vite
-    ├── index.html                       # Página HTML de entrada
-    ├── package.json                     # Dependências e scripts do React
-    ├── vite.config.js                   # Configuração do Vite
+└── portal/                              # Aplicação Frontend React 18 + Vite (Ir Além 1)
+    ├── README.md                        # Documentação específica do frontend
+    ├── package.json                     # Configurações e dependências do React
+    ├── vite.config.js                   # Configuração de build do Vite
+    ├── index.html                       # Ponto de montagem HTML
     └── src/
-        ├── App.jsx                      # Componente principal da aplicação
-        ├── main.jsx                     # Ponto de entrada do React
-        └── index.css                    # Estilos e tokens do Design System
+        ├── main.jsx                     # Inicialização do React
+        ├── App.jsx                      # Componente raiz com AuthProvider e rotas
+        ├── App.css                      # Estilos e tokens do Design System
+        ├── contexts/
+        │   └── AuthContext.jsx          # Context API com autenticação simulada e token JWT
+        ├── components/
+        │   ├── Navbar.jsx               # Cabeçalho de navegação e logout
+        │   └── ProtectedRoute.jsx       # Componente de controle de acesso protegido
+        ├── services/
+        │   └── api.js                   # Camada de API assíncrona simulada
+        ├── pages/
+        │   ├── LoginPage.jsx            # Tela de autenticação médica
+        │   ├── DashboardPage.jsx        # Painel com indicadores e diretrizes SBC
+        │   ├── PacientesPage.jsx        # Listagem de pacientes e filtros por risco
+        │   ├── AgendamentoPage.jsx      # Formulário de agendamento com useReducer
+        │   └── TriagemPage.jsx          # Interface de triagem inteligente por texto
+        └── styles/
+            └── tokens.css               # Variáveis e tokens do Design System
 ```
 
 ---
