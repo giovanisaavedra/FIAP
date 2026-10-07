@@ -54,6 +54,12 @@ def main():
     print(classification_report(y_teste, pred_lr))
     print("Matriz de Confusao:")
     print(confusion_matrix(y_teste, pred_lr))
+    print("\n[Analise Modelo 1 - Regressao Logistica]")
+    print("-> Acuracia: 92.31% (12/13 acertos).")
+    print("-> Ponto forte: Precisao de 100% para Alto Risco (zero alarmes falsos de emergencia).")
+    print("-> Ponto de atencao: 1 falso negativo (paciente grave rotulado como baixo risco, recall 86%).")
+    print("-> Vantagem tecnica: Gera probabilidades continuas e calibradas (predict_proba), permitindo")
+    print("   ajustar o limiar de corte (threshold) para alcancar 100% de sensibilidade no hospital.")
 
     # Modelo B: Arvore de Decisao
     print("\n" + "-" * 50)
@@ -67,14 +73,12 @@ def main():
     print(classification_report(y_teste, pred_dt))
     print("Matriz de Confusao:")
     print(confusion_matrix(y_teste, pred_dt))
-
-    # Sintese comparativa dos modelos
-    print("\n" + "-" * 50)
-    print("SINTESE COMPARATIVA DOS MODELOS:")
-    print("Ambos empatam em acuracia (92.31%). A Arvore prioriza sensibilidade")
-    print("(Recall 100% em Alto Risco, 0 falsos negativos graves), enquanto a Regressao")
-    print("Logistica e indicada para producao por gerar probabilidades continuas")
-    print("(predict_proba) que permitem calibrar o limiar de decisao clinica.")
+    print("\n[Analise Modelo 2 - Arvore de Decisao]")
+    print("-> Acuracia: 92.31% (12/13 acertos).")
+    print("-> Ponto forte: Recall de 100% para Alto Risco (todos os 7 pacientes graves foram capturados).")
+    print("-> Ponto de atencao: 1 falso positivo (paciente leve encaminhado ao PS, seguro em triagem).")
+    print("-> Limitacao tecnica: Opera por cortes discretos rigidos por palavra, sem probabilidades suaves,")
+    print("   com maior tendencia a overfitting em vocabularios mais extensos.")
 
     # 5. Teste pratico em frases com diferentes niveis de gravidade
     print("\n" + "=" * 60)
