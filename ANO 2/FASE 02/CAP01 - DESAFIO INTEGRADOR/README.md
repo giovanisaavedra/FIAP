@@ -138,7 +138,7 @@ Para permitir a generalização em relatos com vocabulário não previsto nas re
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/giovanisaavedra/FIAP/blob/main/ANO%202/FASE%2002/CAP01%20-%20DESAFIO%20INTEGRADOR/classificador_triagem.ipynb)
 
-> ☁️ **Nota para o Google Colab:** Ao abrir o notebook via Colab, execute a primeira célula (`0. CONFIGURAÇÃO DE AMBIENTE`). O ambiente detectará o Colab e solicitará o upload do arquivo `dataset_triagem.csv` (disponível na pasta [`dados/`](dados/dataset_triagem.csv) deste repositório) através do botão *"Escolher arquivos"*.
+> ☁️ **Execução 100% Automática no Google Colab:** Ao abrir o notebook pelo badge acima, basta executar a primeira célula (`0. CONFIGURAÇÃO DE AMBIENTE`). O ambiente detecta o Google Colab e baixa automaticamente o dataset `dataset_triagem.csv` diretamente do repositório GitHub em segundos, permitindo rodar todas as análises com 1 clique (zero atrito e sem necessidade de upload manual).
 
 - **Dataset de Treinamento:** [`dados/dataset_triagem.csv`](dados/dataset_triagem.csv) com 50 relatos clínicos balanceados (25 de Alto Risco e 25 de Baixo Risco).
 - **Vetorização:** `TfidfVectorizer(ngram_range=(1, 2), lowercase=True)` — captura unigramas e bigramas da linguagem médica (ex: "dor peito", "falta ar", "suor frio").
