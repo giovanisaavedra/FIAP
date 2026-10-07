@@ -138,7 +138,7 @@ Para permitir a generalização em relatos com vocabulário não previsto nas re
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/giovanisaavedra/FIAP/blob/main/ANO%202/FASE%2002/CAP01%20-%20DESAFIO%20INTEGRADOR/classificador_triagem.ipynb)
 
-> ☁️ **Execução no Google Colab:** Ao abrir o notebook pelo badge acima, execute a primeira célula (`0. CONFIGURAÇÃO DE AMBIENTE`). Se o repositório estiver público no GitHub, o download do dataset ocorre automaticamente em 1 clique. Caso o ambiente esteja sem acesso à rede externa ou o repositório seja privado, a célula exibirá um botão amigável para upload direto do arquivo `dados/dataset_triagem.csv`.
+> ☁️ **Execução no Google Colab:** Ao abrir o notebook pelo badge acima, basta executar a primeira célula (`0. CONFIGURAÇÃO DE AMBIENTE`). O ambiente clona o repositório e configura os dados automaticamente em segundos para execução direta com 1 clique.
 
 - **Dataset de Treinamento:** [`dados/dataset_triagem.csv`](dados/dataset_triagem.csv) com 50 relatos clínicos balanceados (25 de Alto Risco e 25 de Baixo Risco).
 - **Vetorização:** `TfidfVectorizer(ngram_range=(1, 2), lowercase=True)` — captura unigramas e bigramas da linguagem médica (ex: "dor peito", "falta ar", "suor frio").
@@ -211,7 +211,7 @@ Implementado no script [`classificador_ecg.py`](classificador_ecg.py) e document
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/giovanisaavedra/FIAP/blob/main/ANO%202/FASE%2002/CAP01%20-%20DESAFIO%20INTEGRADOR/classificador_ecg.ipynb)
 
-> ☁️ **Execução no Google Colab:** Ao abrir o notebook pelo badge acima, execute a primeira célula (`0. CONFIGURAÇÃO DE AMBIENTE`). Se o repositório estiver público no GitHub, o download das imagens de ECG ocorre automaticamente em 1 clique. Caso o repositório seja privado, a célula apresentará um botão de upload para o arquivo `dados/ecg_amostras.zip`, descompactando as amostras automaticamente.
+> ☁️ **Execução no Google Colab:** Ao abrir o notebook pelo badge acima, basta executar a primeira célula (`0. CONFIGURAÇÃO DE AMBIENTE`). As amostras de imagens de ECG são baixadas automaticamente do repositório para execução direta com 1 clique.
 
 - **Origem dos Dados:** Imagens da base de ECGs do Mendeley Data catalogada na Fase 1 (`03_dados_visuais_ecg`) e amostras versionadas em `dados/ecg_amostras/`.
 - **Pré-processamento:**
