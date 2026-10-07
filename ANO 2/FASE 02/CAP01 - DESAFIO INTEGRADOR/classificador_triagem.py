@@ -68,6 +68,14 @@ def main():
     print("Matriz de Confusao:")
     print(confusion_matrix(y_teste, pred_dt))
 
+    # Sintese comparativa dos modelos
+    print("\n" + "-" * 50)
+    print("SINTESE COMPARATIVA DOS MODELOS:")
+    print("Ambos empatam em acuracia (92.31%). A Arvore prioriza sensibilidade")
+    print("(Recall 100% em Alto Risco, 0 falsos negativos graves), enquanto a Regressao")
+    print("Logistica e indicada para producao por gerar probabilidades continuas")
+    print("(predict_proba) que permitem calibrar o limiar de decisao clinica.")
+
     # 5. Teste pratico em frases com diferentes niveis de gravidade
     print("\n" + "=" * 60)
     print("TESTE PRATICO EM FRASES NOVAS (PREDICAO EM TEMPO REAL)")
