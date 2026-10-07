@@ -604,6 +604,12 @@ body {
   background: #fff;
 }
 
+.cardio-case-btn.active {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
 .case-id {
   font-size: 11px;
   font-weight: 700;
