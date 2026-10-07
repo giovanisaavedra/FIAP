@@ -83,17 +83,36 @@ Foram elaborados **10 relatos clínicos representativos** no arquivo [`dados/cas
 | 10 | Sensação de cansaço no final do dia após trabalhar o dia inteiro em pé. | Fadiga Comum / Tensão | **Baixo Risco** (Ambulatório) |
 
 ### 🧬 Ontologia de Sintomas Cardiológicos
-A ontologia foi modelada no arquivo [`dados/ontologia_cardio.csv`](dados/ontologia_cardio.csv), estruturando termos-chave, condição clínica associada, risco e conduta baseada nas diretrizes da SBC:
+A ontologia foi modelada no arquivo [`dados/ontologia_cardio.csv`](dados/ontologia_cardio.csv), estruturando termos-chave, variações linguísticas, diagnóstico associado, protocolo e classificação de risco baseados nas diretrizes oficiais da Sociedade Brasileira de Cardiologia:
 
+```csv
+sintoma,variacoes,diagnostico,protocolo,risco
+dor no peito,aperto no torax;aperto no peito;queimacao no peito;dor irradiada;dor no peito que piora ao esforco,Infarto Agudo do Miocárdio,ECG em ate 10 minutos e dosagem seriada de Troponina,alto risco
+falta de ar,dificuldade para respirar;falta de ar ao esforco;falta de ar intensa,Angina de Peito,Avaliacao coronariana com teste ergometrico ou angiotomografia,alto risco
+fadiga cronica,cansaco constante;fraqueza;pernas inchadas;falta de ar ao deitar,Insuficiência Cardíaca,Ecocardiograma transtoracico e dosagem de BNP,alto risco
+palpitacoes,coracao disparado;batimento acelerado;taquicardia,Arritmia Cardíaca,Eletrocardiograma continuo e Holter de 24 horas,alto risco
+dor nas costas,pontada muscular;desconforto postural;dor muscular nas costas,Dor Torácica Musculoesquelética,Analgesia orientada e repouso postural,baixo risco
+cansaco leve,fadiga leve ao final do dia;estresse de rotina,Fadiga Fisiológica / Estresse,Higiene do sono e observacao ambulatorial,baixo risco
 ```
-sintoma_id,termo_clinico,sinonimos,condicao_associada,nivel_risco,conduta_sbc
-1,Dor Torácica Típica,aperto no peito;dor no peito;irradiacao braco esquerdo;pressao toracica,Sindrome Coronariana Aguda,Alto Risco,Encaminhar imediatamente ao pronto-socorro / ECG em ate 10 min
-2,Dor Atípica / Epigástrica,queimacao no estomago;pontada no peito;azia;desconforto pos prandial,Refluxo Gastroesofagico / Dor Musculoesqueletica,Baixo Risco,Avaliacao ambulatorial / Investigacao eletiva
-3,Dispneia / Falta de Ar,falta de ar;sufocado;falta de ar aos esforcos;dificuldade para respirar,Insuficiencia Cardiaca / Congestao Pulmonar,Alto Risco,Atendimento de urgencia / Avaliacao de oxigenacao
-4,Palpitações / Taquicardia,coracao disparado;palpitacoes;batedeira no peito;arritmia,Arritmia Cardiaca / Taquiarritmia,Alto Risco,Monitorizacao eletrocardiografica e consulta cardiologica
-5,Síncope / Desmaio,desmaio;perda de consciencia;desmaiei;tontura intensa,Sincope / Hipofluxo Cerebral,Alto Risco,Investigacao urgente / Risco de arritmia maligna
-6,Assintomático / Fadiga Geral,check-up;rotina;sem sintomas;cansaco leve no final do dia,Saude Preservada / Fadiga Ocupacional,Baixo Risco,Manutencao preventiva e acompanhamento de rotina
-```
+
+### 🏛️ Origem dos Dados e Embasamento Clínico (Diretrizes SBC)
+
+Para garantir rigor médico e evitar regras heurísticas arbitrárias, todas as condições clínicas, regras ontológicas, protocolos de conduta e datasets de triagem foram embasados nas publicações oficiais da **Sociedade Brasileira de Cardiologia (SBC)**, publicadas nos *Arquivos Brasileiros de Cardiologia* (ABC Cardiol):
+
+1. **Dor Torácica e Infarto Agudo do Miocárdio (IAM):**
+   * *Fonte:* Diretriz da SBC sobre Tratamento do Infarto Agudo do Miocárdio com Supradesnível do Segmento ST (IAMCSST) e Diretriz de Dor Torácica na Sala de Emergência.
+   * *Embasamento:* Adota a regra de ouro internacional e da SBC de **"Tempo Porta-ECG ≤ 10 minutos"** para qualquer queixa com suspeita coronariana (dor retroesternal típica, aperto torácico, dor irradiada para mandíbula ou braço esquerdo, acompanhada de sudorese fria ou dispneia), associada à **dosagem seriada de Troponina ultrassensível**.
+2. **Insuficiência Cardíaca (IC):**
+   * *Fonte:* Diretriz Brasileira de Insuficiência Cardíaca Crônica e Aguda (SBC).
+   * *Embasamento:* Incorpora os critérios clássicos de descompensação cardiovascular (dispneia paroxística, ortopneia / *falta de ar ao deitar*, edema maleolar / *pernas inchadas* e fadiga progressiva). A conduta clínica preconizada estabelece **Ecocardiograma Transtorácico** (para estimar fração de ejeção) e dosagem de peptídeos natriuréticos (**BNP / NT-proBNP**) para confirmação de congestão hemodinâmica.
+3. **Arritmias Cardíacas:**
+   * *Fonte:* Diretrizes de Avaliação e Tratamento de Pacientes com Arritmias Cardíacas e Síncope da SBC.
+   * *Embasamento:* Queixas de palpitações súbitas, "coração disparado" ou taquicardia em repouso exigem monitorização contínua por **ECG de 12 derivações** e exame de **Holter de 24 horas** para correlação entre o sintoma relatado e possíveis alterações do ritmo elétrico.
+4. **Diagnóstico Diferencial e Triagem de Baixo Risco:**
+   * *Fonte:* Protocolos de Acolhimento e Estratificação de Risco Cardiovascular da SBC.
+   * *Embasamento:* Dores torácicas com características mecânicas (que pioram à palpação muscular, com rotação de tronco ou tosse) e fadiga associada a longas jornadas de trabalho são catalogadas como mialgias ou estresse fisiológico, não demandando encaminhamento ao pronto-socorro de emergência e permitindo manejo ambulatorial seguro.
+5. **Dados Visuais de Eletrocardiograma (Ir Além 2):**
+   * *Fonte:* Dataset internacional *ECG Images dataset of Cardiac Patients* (Mendeley Data / PhysioNet - Khan et al.), contemplando traçados de 12 derivações de pacientes hígidos e portadores de anormalidades cardíacas (IAM e arritmias).
 
 ---
 
@@ -317,10 +336,13 @@ CAP01 - DESAFIO INTEGRADOR/
 
 ## 📚 Referências Bibliográficas
 
-- Sociedade Brasileira de Cardiologia (SBC). *Diretriz da Sociedade Brasileira de Cardiologia sobre Tratamento do Infarto Agudo do Miocárdio com Supradesnível do Segmento ST*. Arq Bras Cardiol. 2020.
+- Sociedade Brasileira de Cardiologia (SBC). *Diretriz da Sociedade Brasileira de Cardiologia sobre Tratamento do Infarto Agudo do Miocárdio com Supradesnível do Segmento ST (IAMCSST)*. Arq Bras Cardiol. 2020; 115(1):152-214.
+- Sociedade Brasileira de Cardiologia (SBC). *Diretriz de Dor Torácica na Sala de Emergência*. Arq Bras Cardiol.
+- Sociedade Brasileira de Cardiologia (SBC). *Diretriz Brasileira de Insuficiência Cardíaca Crônica e Aguda*. Arq Bras Cardiol. 2018; 111(3):436-539 (Atualização 2021).
+- Sociedade Brasileira de Cardiologia (SBC). *Diretrizes para Avaliação e Tratamento de Pacientes com Arritmias Cardíacas e Síncope*. Arq Bras Cardiol.
+- Khan, A. H., et al. (2021). *ECG Images dataset of Cardiac Patients*. Mendeley Data, V2. https://data.mendeley.com/datasets/gwbz3fsgp8/2
 - Pedregosa, F., et al. (2011). *Scikit-learn: Machine Learning in Python*. Journal of Machine Learning Research, 12, 2825-2830.
-- Khan, A. H., et al. *ECG Images dataset of Cardiac Patients*. Mendeley Data, V2. https://data.mendeley.com/datasets/gwbz3fsgp8/2
-- Jurafsky, D., & Martin, J. H. (2023). *Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition*. 3rd ed.
+- Jurafsky, D., & Martin, J. H. (2023). *Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition*. 3rd ed. Draft.
 
 ---
 
