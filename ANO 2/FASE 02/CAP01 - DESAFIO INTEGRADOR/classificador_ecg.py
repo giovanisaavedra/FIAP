@@ -34,7 +34,14 @@ def carregar_imagens_ecg():
         "~/Library/CloudStorage/GoogleDrive-ggiovani.saavedra@gmail.com/Meu Drive/fiap/trabalhos/02 - ANO 02/Fase01 - Batimentos de Dados/03_dados_visuais_ecg/cardioia_ecg_para_drive"
     )
 
-    caminho_dados = caminho_drive if os.path.exists(caminho_drive) else caminho_local
+    candidatos = [
+        caminho_drive,
+        caminho_local,
+        "dados/ecg_amostras",
+        os.path.join(os.getcwd(), "dados", "ecg_amostras"),
+        os.path.join(os.getcwd(), "ANO 2/FASE 02/CAP01 - DESAFIO INTEGRADOR/dados/ecg_amostras"),
+    ]
+    caminho_dados = next((c for c in candidatos if os.path.exists(c) and len(glob.glob(os.path.join(c, "*", "*.jpg"))) > 0), caminho_local)
     print(f"[*] Carregando base de ECG de: {caminho_dados}")
 
     X = []
