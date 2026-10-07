@@ -224,7 +224,7 @@ Implementado no script [`classificador_ecg.py`](classificador_ecg.py) e document
   - Camada Oculta 2: 32 neurônios com ativação ReLU;
   - Camada de Saída: 1 neurônio com ativação Sigmoid (probabilidade de anomalia);
   - Otimizador: Adam (`learning_rate=0.0005`) com função de perda `binary_crossentropy`.
-- **Desempenho no Teste:** Acurácia de **80.00%** com alta sensibilidade na separação entre traçados normais e patológicos (infarto do miocárdio e batimentos alterados).
+- **Desempenho no Teste:** Acurácia de **75.00%** (9 acertos em 12 exames no conjunto de teste independente de 45 amostras) com **100% de sensibilidade/recall** na detecção de traçados anormais (infarto do miocárdio, arritmias e histórico de isquemia).
 
 ---
 
