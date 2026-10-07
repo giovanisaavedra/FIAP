@@ -84,4 +84,6 @@ Abra seu navegador no link indicado no terminal (normalmente `http://localhost:5
 
 O vídeo de apresentação e demonstração funcional do portal (de até 4 minutos) pode ser acessado no YouTube:
 
-[![Vídeo de Demonstração](https://img.shields.io/badge/YouTube-Demonstração_do_Portal-red?logo=youtube)](https://youtu.be/SEU_LINK_AQUI)
+[![Vídeo de Demonstração](https://img.shields.io/badge/YouTube-Demonstração_do_Portal-red?logo=youtube)](https://youtu.be/m4kAiZTRzU4)
+
+> 🔗 **Link oficial do vídeo de demonstração no YouTube (não listado):** [https://youtu.be/m4kAiZTRzU4](https://youtu.be/m4kAiZTRzU4)

@@ -232,9 +232,9 @@ Implementado no script [`classificador_ecg.py`](classificador_ecg.py) e document
 
 O vídeo de apresentação e demonstração da solução (com duração de até 4 minutos) detalha a formulação dos casos clínicos, a arquitetura da ontologia, a avaliação dos modelos de NLP, o portal React e o treinamento da MLP Keras:
 
-[![Vídeo de Demonstração](https://img.shields.io/badge/YouTube-Vídeo_de_Apresentação-red?logo=youtube)](https://youtu.be/SEU_LINK_AQUI)
+[![Vídeo de Demonstração](https://img.shields.io/badge/YouTube-Vídeo_de_Apresentação-red?logo=youtube)](https://youtu.be/m4kAiZTRzU4)
 
-> *(Substitua o link acima pelo link oficial do vídeo publicado no YouTube pela equipe).*
+> 🔗 **Link oficial do vídeo de demonstração no YouTube (não listado):** [https://youtu.be/m4kAiZTRzU4](https://youtu.be/m4kAiZTRzU4)
 
 ---
 
