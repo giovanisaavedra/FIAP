@@ -136,6 +136,10 @@ O algoritmo classifica com 100% de precisão os 10 casos clínicos estabelecidos
 
 Para permitir a generalização em relatos com vocabulário não previsto nas regras estritas, foi construído um modelo de Machine Learning supervisionado disponível tanto em script [`classificador_triagem.py`](classificador_triagem.py) quanto no Notebook executado [`classificador_triagem.ipynb`](classificador_triagem.ipynb):
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/giovanisaavedra/FIAP/blob/main/ANO%202/FASE%2002/CAP01%20-%20DESAFIO%20INTEGRADOR/classificador_triagem.ipynb)
+
+> ☁️ **Nota para o Google Colab:** Ao abrir o notebook via Colab, execute a primeira célula (`0. CONFIGURAÇÃO DE AMBIENTE`). O ambiente detectará o Colab e solicitará o upload do arquivo `dataset_triagem.csv` (disponível na pasta [`dados/`](dados/dataset_triagem.csv) deste repositório) através do botão *"Escolher arquivos"*.
+
 - **Dataset de Treinamento:** [`dados/dataset_triagem.csv`](dados/dataset_triagem.csv) com 50 relatos clínicos balanceados (25 de Alto Risco e 25 de Baixo Risco).
 - **Vetorização:** `TfidfVectorizer(ngram_range=(1, 2), lowercase=True)` — captura unigramas e bigramas da linguagem médica (ex: "dor peito", "falta ar", "suor frio").
 - **Modelos Comparados:** `LogisticRegression(random_state=42)` vs `DecisionTreeClassifier(max_depth=5)`.
@@ -203,7 +207,11 @@ npm run dev
 
 ## 📈 Ir Além 2 — Classificação de ECGs com Rede Neural MLP (Keras)
 
-Implementado no script [`classificador_ecg.py`](classificador_ecg.py) e documentado detalhadamente no Notebook [`classificador_ecg.ipynb`](classificador_ecg.ipynb), foi construído um modelo de Rede Neural Artificial do tipo **Multi-Layer Perceptron (MLP) utilizando Keras**:
+Implementado no script [`classificador_ecg.py`](classificador_ecg.py) e documentado detalhadamente no Notebook [`classificador_ecg.ipynb`](classificador_ecg.ipynb):
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/giovanisaavedra/FIAP/blob/main/ANO%202/FASE%2002/CAP01%20-%20DESAFIO%20INTEGRADOR/classificador_ecg.ipynb)
+
+> ☁️ **Nota para o Google Colab:** Ao abrir o notebook via Colab, execute a primeira célula (`0. CONFIGURAÇÃO DE AMBIENTE`). O ambiente clonará automaticamente as imagens de amostra de ECG do repositório para execução direta sem necessidade de download manual.
 
 - **Origem dos Dados:** Imagens da base de ECGs do Mendeley Data catalogada na Fase 1 (`03_dados_visuais_ecg`) e amostras versionadas em `dados/ecg_amostras/`.
 - **Pré-processamento:**
@@ -341,8 +349,6 @@ CAP01 - DESAFIO INTEGRADOR/
 - Sociedade Brasileira de Cardiologia (SBC). *Diretriz Brasileira de Insuficiência Cardíaca Crônica e Aguda*. Arq Bras Cardiol. 2018; 111(3):436-539 (Atualização 2021).
 - Sociedade Brasileira de Cardiologia (SBC). *Diretrizes para Avaliação e Tratamento de Pacientes com Arritmias Cardíacas e Síncope*. Arq Bras Cardiol.
 - Khan, A. H., et al. (2021). *ECG Images dataset of Cardiac Patients*. Mendeley Data, V2. https://data.mendeley.com/datasets/gwbz3fsgp8/2
-- Pedregosa, F., et al. (2011). *Scikit-learn: Machine Learning in Python*. Journal of Machine Learning Research, 12, 2825-2830.
-- Jurafsky, D., & Martin, J. H. (2023). *Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition*. 3rd ed. Draft.
 
 ---
 
